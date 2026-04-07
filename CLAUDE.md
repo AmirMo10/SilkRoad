@@ -486,3 +486,29 @@ Before any phase is marked complete, verify:
 ---
 
 *This document is maintained by AMIR (Product Manager & Tech Lead) and reviewed by the entire team. Last updated: Phase 0.*
+
+---
+
+## 🚧 Repository Status (Phase 0 — Initial Scaffold)
+
+The folder structure documented above is the **target architecture**. The repo currently contains only the initial Next.js 15 scaffold:
+
+- `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `.gitignore`, `.env.example`
+- `src/app/layout.tsx` (RTL Persian root layout), `src/app/page.tsx` (placeholder home), `src/styles/globals.css` (Tailwind v4 + brand tokens)
+
+Most directories listed in the Folder Structure section (server/, components/, integrations/, tests/, docs/architecture/, etc.) **do not exist yet** and should be created as features are implemented. Do not waste time searching for them.
+
+### Common commands
+
+| Action | Command |
+| --- | --- |
+| Install deps | `pnpm install` |
+| Dev server | `pnpm dev` |
+| Production build | `pnpm build` |
+| Lint | `pnpm lint` |
+| Type check | `pnpm typecheck` |
+| Unit tests | `pnpm test` |
+| Run a single unit test | `pnpm test -- path/to/file.test.ts` |
+| E2E tests | `pnpm test:e2e` |
+
+Vitest, Playwright, Drizzle, tRPC, next-intl, and the rest of the locked stack are **declared as devDependencies but not yet wired up** — add their config files (`vitest.config.ts`, `playwright.config.ts`, `drizzle.config.ts`, etc.) as the corresponding feature work begins.
