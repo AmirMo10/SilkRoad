@@ -5,14 +5,20 @@ on:
     branches: ["**"]
   pull_request:
 
+env:
+  JWT_SECRET: ci-jwt-secret-must-be-at-least-32-characters-long
+  JWT_REFRESH_SECRET: ci-jwt-refresh-secret-must-be-at-least-32-characters-long
+  DATABASE_URL: postgres://silkroad:silkroad@localhost:5432/silkroad
+  REDIS_URL: redis://localhost:6379
+
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
       - name: Install
         run: npm install --no-audit --no-fund
       - name: Type check

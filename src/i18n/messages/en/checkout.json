@@ -1,0 +1,14 @@
+{
+  "splitPayment": {
+    "phase1Heading": "Upfront payment",
+    "phase2Heading": "Remaining payment",
+    "phase1Description": "On order placement",
+    "phase2Description": "When goods arrive in Iran"
+  },
+  "shippingTier": {
+    "selectLabel": "Choose your shipping tier"
+  },
+  "actions": {
+    "proceedToPayment": "Proceed to payment"
+  }
+}

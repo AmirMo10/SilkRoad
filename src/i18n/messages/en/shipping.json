@@ -1,0 +1,19 @@
+{
+  "tier": {
+    "turbo": {
+      "name": "Turbo",
+      "description": "Air freight, fastest option",
+      "eta": "7–15 days"
+    },
+    "normal": {
+      "name": "Normal",
+      "description": "Combined transport, balanced",
+      "eta": "20–35 days"
+    },
+    "economy": {
+      "name": "Economy",
+      "description": "Sea freight, lowest cost",
+      "eta": "45–70 days"
+    }
+  }
+}

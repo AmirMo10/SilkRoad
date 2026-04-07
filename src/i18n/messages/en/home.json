@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "badge": "The #1 wholesale marketplace",
+    "title": "SilkRoad",
+    "subtitle": "Direct wholesale imports from China to Iran",
+    "description": "Manufacturer prices, three shipping tiers, secure split payment"
+  },
+  "shippingSection": {
+    "title": "Shipping options",
+    "subtitle": "Three tiers, your choice — every order"
+  },
+  "featuredSection": {
+    "title": "Featured products",
+    "subtitle": "This week's best wholesale opportunities"
+  },
+  "splitPayment": {
+    "badge": "Secure payment",
+    "title": "Split payment",
+    "description": "Pay half on order confirmation and the rest when goods arrive in Iran. Fully secured, zero risk.",
+    "phase1Label": "On order",
+    "phase2Label": "On arrival"
+  }
+}
