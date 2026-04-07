@@ -1,0 +1,7 @@
+{
+  "moqNotMet": "Minimum order quantity for this product is {moq} units",
+  "moqStepViolation": "Quantity must be a multiple of {step}",
+  "productInactive": "This product is temporarily unavailable",
+  "generic": "Something went wrong. Please try again.",
+  "notFound": "Page not found"
+}

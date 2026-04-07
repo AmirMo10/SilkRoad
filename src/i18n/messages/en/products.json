@@ -1,0 +1,19 @@
+{
+  "card": {
+    "moqLabel": "MOQ: {moq} units",
+    "perUnit": "per unit",
+    "viewDetails": "View details"
+  },
+  "detail": {
+    "moq": "Minimum order quantity",
+    "weight": "Weight",
+    "origin": "Country of origin",
+    "category": "Category"
+  },
+  "samples": {
+    "headphones": "Wireless headphones (next-gen)",
+    "watch": "Smart sport watch",
+    "powerbank": "20000 mAh power bank",
+    "camera": "WiFi security camera"
+  }
+}

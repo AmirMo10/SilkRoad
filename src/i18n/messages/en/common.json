@@ -1,0 +1,22 @@
+{
+  "brand": {
+    "name": "SilkRoad",
+    "tagline": "China–Iran wholesale marketplace"
+  },
+  "nav": {
+    "products": "Products",
+    "howItWorks": "How It Works",
+    "shipping": "Shipping",
+    "about": "About",
+    "login": "Sign in",
+    "cart": "Cart"
+  },
+  "footer": {
+    "rights": "© 2026 SilkRoad. All rights reserved."
+  },
+  "actions": {
+    "viewProducts": "Browse products",
+    "learnMore": "Learn more",
+    "addToCart": "Add to cart"
+  }
+}
