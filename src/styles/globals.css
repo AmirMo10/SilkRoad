@@ -1,13 +1,29 @@
 @import "tailwindcss";
+@import "./design-tokens.css";
 
-:root {
-  --color-bg: #0b1020;
-  --color-fg: #f5f1e8;
-  --color-gold: #d4af37;
+html,
+body {
+  background: var(--sr-bg);
+  color: var(--sr-fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-html, body {
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: Vazirmatn, Inter, system-ui, sans-serif;
+body {
+  background-image: var(--sr-gradient-hero);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Subtle Persian-inspired geometric pattern overlay */
+.sr-pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.sr-glass {
+  background: var(--sr-glass);
+  border: 1px solid var(--sr-glass-border);
+  backdrop-filter: blur(12px);
 }

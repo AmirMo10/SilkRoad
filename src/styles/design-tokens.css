@@ -1,0 +1,37 @@
+/* SilkRoad brand design tokens */
+:root {
+  /* Colors — deep navy + gold + warm sand */
+  --sr-navy-950: #070b1c;
+  --sr-navy-900: #0b1230;
+  --sr-navy-800: #131c4a;
+  --sr-navy-700: #1d2a6b;
+  --sr-gold-500: #d4af37;
+  --sr-gold-400: #e6c25a;
+  --sr-gold-300: #f0d77f;
+  --sr-sand-100: #f5f1e8;
+  --sr-sand-200: #ebe3d0;
+  --sr-sand-300: #d9cba8;
+
+  /* Semantic */
+  --sr-bg: var(--sr-navy-950);
+  --sr-surface: var(--sr-navy-900);
+  --sr-surface-elevated: var(--sr-navy-800);
+  --sr-fg: var(--sr-sand-100);
+  --sr-fg-muted: rgba(245, 241, 232, 0.7);
+  --sr-accent: var(--sr-gold-500);
+  --sr-border: rgba(212, 175, 55, 0.2);
+
+  /* Effects */
+  --sr-gradient-hero: radial-gradient(
+      ellipse at top,
+      rgba(212, 175, 55, 0.15) 0%,
+      transparent 50%
+    ),
+    linear-gradient(180deg, var(--sr-navy-900) 0%, var(--sr-navy-950) 100%);
+  --sr-glass: rgba(255, 255, 255, 0.04);
+  --sr-glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Radius */
+  --sr-radius: 0.75rem;
+  --sr-radius-lg: 1.25rem;
+}
