@@ -217,6 +217,12 @@
       .product h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; min-height: 2.8em; }
       .product .price { color: var(--sr-gold-400); font-size: 1.25rem; font-weight: 800; margin-top: 0.5rem; }
       .product .price-label { color: var(--sr-fg-muted); font-size: 0.75rem; }
+      a.product-link {
+        display: block; height: 100%; text-decoration: none; color: inherit;
+        transition: transform 0.2s ease;
+      }
+      a.product-link:hover { transform: translateY(-2px); }
+      a.product-link > .card.product { height: 100%; }
 
       .split { max-width: 60rem; margin: 0 auto; text-align: center; }
       .split .badges {
@@ -332,7 +338,7 @@
           <span class="brand-name">SilkRoad</span>
         </div>
         <nav class="main">
-          <a href="#products">Products</a>
+          <a href="products.en.html">Products</a>
           <a href="#shipping">Shipping</a>
           <a href="#split">Split Payment</a>
           <a href="#about">About</a>
@@ -358,7 +364,7 @@
           <p class="subtitle">Direct wholesale imports from China to Iran</p>
           <p class="desc">Manufacturer prices, three shipping tiers, secure split payments</p>
           <div class="hero-ctas">
-            <a href="#products" class="btn btn-primary btn-lg">
+            <a href="products.en.html" class="btn btn-primary btn-lg">
               View Products
               <svg class="icon"><use href="#i-arrow-right" /></svg>
             </a>
@@ -405,42 +411,50 @@
           <h2>Featured Products</h2>
           <p class="lead">The best import opportunities this week</p>
           <div class="grid grid-4">
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-headphones" /></svg>
+            <a href="product.en.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-headphones" /></svg>
+                </div>
+                <h3>Next-Gen Wireless Headphones</h3>
+                <span class="badge">MOQ: 1,000 units</span>
+                <div class="price">185,000 Toman</div>
+                <div class="price-label">per unit</div>
               </div>
-              <h3>Next-Gen Wireless Headphones</h3>
-              <span class="badge">MOQ: 1,000 units</span>
-              <div class="price">185,000 Toman</div>
-              <div class="price-label">per unit</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-watch" /></svg>
+            </a>
+            <a href="product.en.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-watch" /></svg>
+                </div>
+                <h3>Smart Sports Watch</h3>
+                <span class="badge">MOQ: 500 units</span>
+                <div class="price">420,000 Toman</div>
+                <div class="price-label">per unit</div>
               </div>
-              <h3>Smart Sports Watch</h3>
-              <span class="badge">MOQ: 500 units</span>
-              <div class="price">420,000 Toman</div>
-              <div class="price-label">per unit</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-battery" /></svg>
+            </a>
+            <a href="product.en.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-battery" /></svg>
+                </div>
+                <h3>20,000 mAh Power Bank</h3>
+                <span class="badge">MOQ: 2,000 units</span>
+                <div class="price">95,000 Toman</div>
+                <div class="price-label">per unit</div>
               </div>
-              <h3>20,000 mAh Power Bank</h3>
-              <span class="badge">MOQ: 2,000 units</span>
-              <div class="price">95,000 Toman</div>
-              <div class="price-label">per unit</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-camera" /></svg>
+            </a>
+            <a href="product.en.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-camera" /></svg>
+                </div>
+                <h3>WiFi Security Camera</h3>
+                <span class="badge">MOQ: 200 units</span>
+                <div class="price">680,000 Toman</div>
+                <div class="price-label">per unit</div>
               </div>
-              <h3>WiFi Security Camera</h3>
-              <span class="badge">MOQ: 200 units</span>
-              <div class="price">680,000 Toman</div>
-              <div class="price-label">per unit</div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -488,7 +502,7 @@
           <div>
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#products">Products</a></li>
+              <li><a href="products.en.html">Products</a></li>
               <li><a href="#shipping">Shipping</a></li>
               <li><a href="#split">Split Payment</a></li>
             </ul>
