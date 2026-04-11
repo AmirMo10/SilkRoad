@@ -4,11 +4,30 @@
     "perUnit": "قیمت هر واحد",
     "viewDetails": "مشاهده جزئیات"
   },
+  "catalog": {
+    "title": "کاتالوگ عمده‌فروشی",
+    "subtitle": "همه محصولات وارداتی چین با قیمت تولیدکننده",
+    "count": "{count} محصول",
+    "searchPlaceholder": "جستجوی محصول…",
+    "empty": "محصولی با این فیلترها یافت نشد"
+  },
+  "filter": {
+    "categories": "دسته‌بندی‌ها",
+    "price": "محدوده قیمت",
+    "sort": "مرتب‌سازی"
+  },
   "detail": {
     "moq": "حداقل تعداد سفارش",
     "weight": "وزن",
     "origin": "کشور مبدأ",
-    "category": "دسته‌بندی"
+    "originCN": "ساخت چین",
+    "category": "دسته‌بندی",
+    "kg": "کیلوگرم",
+    "step": "گام سفارش",
+    "addToCart": "افزودن به سبد",
+    "shippingSection": "روش‌های ارسال",
+    "splitPreviewTitle": "پیش‌نمایش پرداخت مرحله‌ای",
+    "splitPreviewDesc": "برای سفارش {moq} عدد (یک دسته MOQ)، پرداخت به دو بخش تقسیم می‌شود:"
   },
   "samples": {
     "headphones": "هدفون بی‌سیم نسل جدید",

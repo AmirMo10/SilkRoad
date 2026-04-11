@@ -427,6 +427,15 @@
         color: var(--sr-fg-muted);
         font-size: 0.75rem;
       }
+      a.product-link {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+      a.product-link:hover { transform: translateY(-2px); }
+      a.product-link > .card.product { height: 100%; }
 
       /* Split payment */
       .split {
@@ -597,7 +606,7 @@
           <span class="brand-name">راه ابریشم</span>
         </div>
         <nav class="main">
-          <a href="#products">محصولات</a>
+          <a href="products.html">محصولات</a>
           <a href="#shipping">روش‌های ارسال</a>
           <a href="#split">پرداخت مرحله‌ای</a>
           <a href="#about">درباره ما</a>
@@ -623,7 +632,7 @@
           <p class="subtitle">واردات مستقیم عمده از چین به ایران</p>
           <p class="desc">قیمت‌های تولیدکننده، سه روش ارسال، پرداخت مرحله‌ای امن</p>
           <div class="hero-ctas">
-            <a href="#products" class="btn btn-primary btn-lg">
+            <a href="products.html" class="btn btn-primary btn-lg">
               مشاهده محصولات
               <svg class="icon"><use href="#i-arrow-left" /></svg>
             </a>
@@ -670,42 +679,50 @@
           <h2>محصولات منتخب</h2>
           <p class="lead">بهترین فرصت‌های واردات این هفته</p>
           <div class="grid grid-4">
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-headphones" /></svg>
+            <a href="product.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-headphones" /></svg>
+                </div>
+                <h3>هدفون بی‌سیم نسل جدید</h3>
+                <span class="badge">حداقل سفارش: ۱,۰۰۰ عدد</span>
+                <div class="price">۱۸۵,۰۰۰ تومان</div>
+                <div class="price-label">قیمت هر واحد</div>
               </div>
-              <h3>هدفون بی‌سیم نسل جدید</h3>
-              <span class="badge">حداقل سفارش: ۱,۰۰۰ عدد</span>
-              <div class="price">۱۸۵,۰۰۰ تومان</div>
-              <div class="price-label">قیمت هر واحد</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-watch" /></svg>
+            </a>
+            <a href="product.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-watch" /></svg>
+                </div>
+                <h3>ساعت هوشمند ورزشی</h3>
+                <span class="badge">حداقل سفارش: ۵۰۰ عدد</span>
+                <div class="price">۴۲۰,۰۰۰ تومان</div>
+                <div class="price-label">قیمت هر واحد</div>
               </div>
-              <h3>ساعت هوشمند ورزشی</h3>
-              <span class="badge">حداقل سفارش: ۵۰۰ عدد</span>
-              <div class="price">۴۲۰,۰۰۰ تومان</div>
-              <div class="price-label">قیمت هر واحد</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-battery" /></svg>
+            </a>
+            <a href="product.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-battery" /></svg>
+                </div>
+                <h3>پاوربانک ۲۰۰۰۰ میلی‌آمپر</h3>
+                <span class="badge">حداقل سفارش: ۲,۰۰۰ عدد</span>
+                <div class="price">۹۵,۰۰۰ تومان</div>
+                <div class="price-label">قیمت هر واحد</div>
               </div>
-              <h3>پاوربانک ۲۰۰۰۰ میلی‌آمپر</h3>
-              <span class="badge">حداقل سفارش: ۲,۰۰۰ عدد</span>
-              <div class="price">۹۵,۰۰۰ تومان</div>
-              <div class="price-label">قیمت هر واحد</div>
-            </div>
-            <div class="card product">
-              <div class="thumb">
-                <svg class="icon icon-product"><use href="#i-camera" /></svg>
+            </a>
+            <a href="product.html" class="product-link">
+              <div class="card product">
+                <div class="thumb">
+                  <svg class="icon icon-product"><use href="#i-camera" /></svg>
+                </div>
+                <h3>دوربین مداربسته WiFi</h3>
+                <span class="badge">حداقل سفارش: ۲۰۰ عدد</span>
+                <div class="price">۶۸۰,۰۰۰ تومان</div>
+                <div class="price-label">قیمت هر واحد</div>
               </div>
-              <h3>دوربین مداربسته WiFi</h3>
-              <span class="badge">حداقل سفارش: ۲۰۰ عدد</span>
-              <div class="price">۶۸۰,۰۰۰ تومان</div>
-              <div class="price-label">قیمت هر واحد</div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -753,7 +770,7 @@
           <div>
             <h4>لینک‌های سریع</h4>
             <ul>
-              <li><a href="#products">محصولات</a></li>
+              <li><a href="products.html">محصولات</a></li>
               <li><a href="#shipping">روش‌های ارسال</a></li>
               <li><a href="#split">پرداخت مرحله‌ای</a></li>
             </ul>

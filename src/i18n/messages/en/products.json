@@ -4,11 +4,30 @@
     "perUnit": "per unit",
     "viewDetails": "View details"
   },
+  "catalog": {
+    "title": "Wholesale Catalog",
+    "subtitle": "All China-imported products at manufacturer prices",
+    "count": "{count} products",
+    "searchPlaceholder": "Search products…",
+    "empty": "No products match these filters"
+  },
+  "filter": {
+    "categories": "Categories",
+    "price": "Price range",
+    "sort": "Sort by"
+  },
   "detail": {
     "moq": "Minimum order quantity",
     "weight": "Weight",
     "origin": "Country of origin",
-    "category": "Category"
+    "originCN": "Made in China",
+    "category": "Category",
+    "kg": "kg",
+    "step": "Order step",
+    "addToCart": "Add to cart",
+    "shippingSection": "Shipping tiers",
+    "splitPreviewTitle": "Split payment preview",
+    "splitPreviewDesc": "For an order of {moq} units (one MOQ batch), the payment is divided in two phases:"
   },
   "samples": {
     "headphones": "Wireless headphones (next-gen)",
