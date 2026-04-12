@@ -1,14 +1,36 @@
 {
+  "page": {
+    "title": "نهایی‌سازی سفارش",
+    "subtitle": "روش ارسال را انتخاب و پیش‌پرداخت را ثبت کنید"
+  },
+  "shippingTier": {
+    "heading": "روش ارسال",
+    "selectLabel": "روش ارسال را انتخاب کنید"
+  },
   "splitPayment": {
+    "title": "پرداخت مرحله‌ای",
     "phase1Heading": "پیش‌پرداخت",
     "phase2Heading": "پرداخت باقی‌مانده",
     "phase1Description": "هنگام ثبت سفارش",
-    "phase2Description": "هنگام رسیدن کالا به ایران"
+    "phase2Description": "هنگام رسیدن کالا به ایران",
+    "phase1Amount": "مبلغ قابل پرداخت الان",
+    "phase2Amount": "مبلغ قابل پرداخت در زمان رسیدن"
   },
-  "shippingTier": {
-    "selectLabel": "روش ارسال را انتخاب کنید"
+  "review": {
+    "heading": "بررسی سفارش",
+    "subtotal": "جمع محصولات",
+    "shipping": "هزینه ارسال",
+    "total": "جمع کل سفارش",
+    "estimated": "زمان تخمینی رسیدن"
   },
   "actions": {
-    "proceedToPayment": "ادامه به پرداخت"
+    "proceedToPayment": "پرداخت پیش‌پرداخت",
+    "backToCart": "بازگشت به سبد خرید",
+    "placeOrder": "ثبت نهایی سفارش"
+  },
+  "success": {
+    "title": "سفارش ثبت شد",
+    "description": "پیش‌پرداخت شما با موفقیت دریافت شد. پس از رسیدن کالا به ایران، پرداخت باقی‌مانده به شما اطلاع داده خواهد شد.",
+    "backHome": "بازگشت به صفحه اصلی"
   }
 }

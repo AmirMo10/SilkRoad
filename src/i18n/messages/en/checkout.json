@@ -1,14 +1,36 @@
 {
-  "splitPayment": {
-    "phase1Heading": "Upfront payment",
-    "phase2Heading": "Remaining payment",
-    "phase1Description": "On order placement",
-    "phase2Description": "When goods arrive in Iran"
+  "page": {
+    "title": "Checkout",
+    "subtitle": "Pick a shipping tier and confirm your upfront payment"
   },
   "shippingTier": {
+    "heading": "Shipping tier",
     "selectLabel": "Choose your shipping tier"
   },
+  "splitPayment": {
+    "title": "Split payment",
+    "phase1Heading": "Upfront payment",
+    "phase2Heading": "Remaining payment",
+    "phase1Description": "Due when you place the order",
+    "phase2Description": "Due when the goods arrive in Iran",
+    "phase1Amount": "Payable now",
+    "phase2Amount": "Payable on arrival"
+  },
+  "review": {
+    "heading": "Order review",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Order total",
+    "estimated": "Estimated arrival"
+  },
   "actions": {
-    "proceedToPayment": "Proceed to payment"
+    "proceedToPayment": "Pay upfront",
+    "backToCart": "Back to cart",
+    "placeOrder": "Place order"
+  },
+  "success": {
+    "title": "Order placed",
+    "description": "Your upfront payment has been received. When the goods arrive in Iran you will be notified to pay the remaining balance.",
+    "backHome": "Back to home"
   }
 }

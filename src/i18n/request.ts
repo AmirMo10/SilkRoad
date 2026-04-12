@@ -13,6 +13,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       products: (await import(`./messages/${locale}/products.json`)).default,
       shipping: (await import(`./messages/${locale}/shipping.json`)).default,
       checkout: (await import(`./messages/${locale}/checkout.json`)).default,
+      cart: (await import(`./messages/${locale}/cart.json`)).default,
       errors: (await import(`./messages/${locale}/errors.json`)).default,
     };
     return { locale, messages };
