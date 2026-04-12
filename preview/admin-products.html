@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>مدیریت محصولات — راه ابریشم</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="preview-note">نسخه پیش‌نمایش استاتیک — <a href="index.html">صفحه اصلی</a></div>
+
+    <header class="site">
+      <div class="container">
+        <div class="bar">
+          <a href="index.html" class="brand">
+            <div class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/><circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <span class="brand-name">راه ابریشم</span>
+          </a>
+          <div class="locale-toggle">
+            <a href="admin-products.en.html">EN</a>
+            <a class="active" href="admin-products.html">فا</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          پنل مدیریت
+        </div>
+        <nav>
+          <a href="admin.html">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            داشبورد
+          </a>
+          <a href="admin-products.html" class="active">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+            محصولات
+          </a>
+          <a href="admin-orders.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            سفارش‌ها
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            محموله‌ها
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5C14.5 8 13.3 7 12 7c-2 0-3 1.2-3 2.5 0 2.8 6 1.5 6 4.5 0 1.5-1.2 2.5-3 2.5-1.5 0-2.7-.8-3.3-2"/></svg>
+            پرداخت‌ها
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            کاربران
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1.08 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
+            تنظیمات
+          </a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-header">
+          <div class="admin-header-row">
+            <div>
+              <h1>مدیریت محصولات</h1>
+              <p>افزودن، ویرایش و مدیریت کاتالوگ محصولات عمده‌فروشی</p>
+            </div>
+            <button class="btn btn-primary" style="padding:0.6rem 1.25rem;font-size:0.875rem">
+              <svg class="icon" style="width:18px;height:18px;stroke-width:2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/></svg>
+              افزودن محصول
+            </button>
+          </div>
+        </div>
+
+        <div class="table-count">۶ محصول</div>
+
+        <div class="admin-table-wrap" style="overflow-x:auto">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>نام محصول</th>
+                <th>قیمت (تومان)</th>
+                <th>حداقل سفارش</th>
+                <th>وزن (کیلوگرم)</th>
+                <th>دسته‌بندی</th>
+                <th>وضعیت</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600">هدفون بلوتوثی شیائومی</td>
+                <td class="gold">۱۸۵,۰۰۰ تومان</td>
+                <td>۱,۰۰۰</td>
+                <td class="muted">۰.۲۸ کیلوگرم</td>
+                <td><span class="badge">الکترونیک</span></td>
+                <td>
+                  <button class="toggle on">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">فعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">ساعت هوشمند T500 Pro</td>
+                <td class="gold">۴۲۰,۰۰۰ تومان</td>
+                <td>۵۰۰</td>
+                <td class="muted">۰.۱۲ کیلوگرم</td>
+                <td><span class="badge">ساعت</span></td>
+                <td>
+                  <button class="toggle on">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">فعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">کابل شارژ تایپ‌سی ۱ متری</td>
+                <td class="gold">۱۸,۵۰۰ تومان</td>
+                <td>۵,۰۰۰</td>
+                <td class="muted">۰.۰۴ کیلوگرم</td>
+                <td><span class="badge">لوازم جانبی</span></td>
+                <td>
+                  <button class="toggle on">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">فعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">پاوربانک ۲۰۰۰۰ میلی‌آمپر</td>
+                <td class="gold">۳۱۰,۰۰۰ تومان</td>
+                <td>۵۰۰</td>
+                <td class="muted">۰.۴۵ کیلوگرم</td>
+                <td><span class="badge">الکترونیک</span></td>
+                <td>
+                  <button class="toggle off">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">غیرفعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">قاب سیلیکونی آیفون ۱۵</td>
+                <td class="gold">۴۵,۰۰۰ تومان</td>
+                <td>۲,۰۰۰</td>
+                <td class="muted">۰.۰۳ کیلوگرم</td>
+                <td><span class="badge">لوازم جانبی</span></td>
+                <td>
+                  <button class="toggle on">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">فعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">اسپیکر بلوتوثی JBL کپی</td>
+                <td class="gold">۲۷۵,۰۰۰ تومان</td>
+                <td>۳۰۰</td>
+                <td class="muted">۰.۵۵ کیلوگرم</td>
+                <td><span class="badge">الکترونیک</span></td>
+                <td>
+                  <button class="toggle on">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+                    <span class="label">فعال</span>
+                  </button>
+                </td>
+                <td>
+                  <div class="actions">
+                    <button title="ویرایش"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button class="danger" title="حذف"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Admin Dashboard — SilkRoad</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- Preview banner -->
+    <div class="preview-note">Static preview — <a href="en.html">Home</a></div>
+
+    <!-- Header -->
+    <header class="site">
+      <div class="container">
+        <div class="bar">
+          <a href="en.html" class="brand">
+            <div class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/><circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <span class="brand-name">SilkRoad</span>
+          </a>
+          <div class="locale-toggle">
+            <a class="active" href="admin.en.html">EN</a>
+            <a href="admin.html">فا</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Admin shell -->
+    <div class="admin-shell">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Admin Panel
+        </div>
+        <nav>
+          <a href="admin.en.html" class="active">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Dashboard
+          </a>
+          <a href="admin-products.en.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+            Products
+          </a>
+          <a href="admin-orders.en.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            Orders
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Shipments
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5C14.5 8 13.3 7 12 7c-2 0-3 1.2-3 2.5 0 2.8 6 1.5 6 4.5 0 1.5-1.2 2.5-3 2.5-1.5 0-2.7-.8-3.3-2"/></svg>
+            Payments
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Users
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1.08 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
+            Settings
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="admin-main">
+        <div class="admin-header">
+          <h1>Admin Dashboard</h1>
+          <p>Platform performance overview</p>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5C14.5 8 13.3 7 12 7c-2 0-3 1.2-3 2.5 0 2.8 6 1.5 6 4.5 0 1.5-1.2 2.5-3 2.5-1.5 0-2.7-.8-3.3-2"/></svg>
+            </div>
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-value">2,480,000,000 T</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            </div>
+            <div class="stat-label">Active Orders</div>
+            <div class="stat-value">47</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="stat-label">Pending Shipments</div>
+            <div class="stat-value">12</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="stat-label">Registered Users</div>
+            <div class="stat-value">183</div>
+          </div>
+        </div>
+
+        <!-- Recent orders -->
+        <h2 class="section-title">Recent Orders</h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Tier</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">SR-1047</td>
+                <td><span class="badge">Phase 1 paid</span></td>
+                <td class="gold">185,000,000 T</td>
+                <td>
+                  <svg class="icon" style="width:16px;height:16px;display:inline;vertical-align:middle;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </td>
+                <td class="muted">1405/01/23</td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1046</td>
+                <td><span class="badge">In transit</span></td>
+                <td class="gold">420,000,000 T</td>
+                <td>
+                  <svg class="icon" style="width:16px;height:16px;display:inline;vertical-align:middle;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                </td>
+                <td class="muted">1405/01/22</td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1045</td>
+                <td><span class="badge badge-blue">Arrived in Iran</span></td>
+                <td class="gold">95,000,000 T</td>
+                <td>
+                  <svg class="icon" style="width:16px;height:16px;display:inline;vertical-align:middle;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M2 12c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 17c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 7c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/></svg>
+                </td>
+                <td class="muted">1405/01/20</td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1044</td>
+                <td><span class="badge badge-green">Completed</span></td>
+                <td class="gold">680,000,000 T</td>
+                <td>
+                  <svg class="icon" style="width:16px;height:16px;display:inline;vertical-align:middle;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </td>
+                <td class="muted">1405/01/18</td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1043</td>
+                <td><span class="badge badge-blue">Awaiting Phase 2</span></td>
+                <td class="gold">312,000,000 T</td>
+                <td>
+                  <svg class="icon" style="width:16px;height:16px;display:inline;vertical-align:middle;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                </td>
+                <td class="muted">1405/01/15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
