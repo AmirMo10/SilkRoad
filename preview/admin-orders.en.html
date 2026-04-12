@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Order Management — SilkRoad</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="preview-note">Static preview — <a href="en.html">Home</a></div>
+
+    <header class="site">
+      <div class="container">
+        <div class="bar">
+          <a href="en.html" class="brand">
+            <div class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/><circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <span class="brand-name">SilkRoad</span>
+          </a>
+          <div class="locale-toggle">
+            <a class="active" href="admin-orders.en.html">EN</a>
+            <a href="admin-orders.html">فا</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Admin Panel
+        </div>
+        <nav>
+          <a href="admin.en.html">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Dashboard
+          </a>
+          <a href="admin-products.en.html">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+            Products
+          </a>
+          <a href="admin-orders.en.html" class="active">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            Orders
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Shipments
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5C14.5 8 13.3 7 12 7c-2 0-3 1.2-3 2.5 0 2.8 6 1.5 6 4.5 0 1.5-1.2 2.5-3 2.5-1.5 0-2.7-.8-3.3-2"/></svg>
+            Payments
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Users
+          </a>
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1.08 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
+            Settings
+          </a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-header">
+          <h1>Order Management</h1>
+          <p>Track and manage wholesale buyer orders</p>
+        </div>
+
+        <!-- Status filter pills -->
+        <div class="filter-pills">
+          <button class="active">All</button>
+          <button>Awaiting Phase 1</button>
+          <button>Phase 1 paid</button>
+          <button>Processing</button>
+          <button>In transit</button>
+          <button>Arrived in Iran</button>
+          <button>Awaiting Phase 2</button>
+          <button>Completed</button>
+          <button>Cancelled</button>
+        </div>
+
+        <div class="table-count">8 orders</div>
+
+        <div class="admin-table-wrap" style="overflow-x:auto">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Phase 1</th>
+                <th>Phase 2</th>
+                <th>Shipping tier</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">SR-1047</td>
+                <td class="muted">U-012</td>
+                <td><span class="badge">Phase 1 paid</span></td>
+                <td class="gold">185,000,000 T</td>
+                <td class="muted">92,500,000 T</td>
+                <td class="muted">92,500,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Normal</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/23</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1046</td>
+                <td class="muted">U-008</td>
+                <td><span class="badge">In transit</span></td>
+                <td class="gold">420,000,000 T</td>
+                <td class="muted">210,000,000 T</td>
+                <td class="muted">210,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Turbo</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/22</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1045</td>
+                <td class="muted">U-034</td>
+                <td><span class="badge badge-blue">Arrived in Iran</span></td>
+                <td class="gold">95,000,000 T</td>
+                <td class="muted">47,500,000 T</td>
+                <td class="muted">47,500,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M2 12c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 17c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 7c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Economy</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/20</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1044</td>
+                <td class="muted">U-019</td>
+                <td><span class="badge badge-green">Completed</span></td>
+                <td class="gold">680,000,000 T</td>
+                <td class="muted">340,000,000 T</td>
+                <td class="muted">340,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Normal</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/18</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1043</td>
+                <td class="muted">U-005</td>
+                <td><span class="badge badge-blue">Awaiting Phase 2</span></td>
+                <td class="gold">312,000,000 T</td>
+                <td class="muted">156,000,000 T</td>
+                <td class="muted">156,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Turbo</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/15</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1042</td>
+                <td class="muted">U-022</td>
+                <td><span class="badge">Processing</span></td>
+                <td class="gold">148,000,000 T</td>
+                <td class="muted">74,000,000 T</td>
+                <td class="muted">74,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M2 12c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 17c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/><path d="M2 7c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Economy</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/14</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1041</td>
+                <td class="muted">U-001</td>
+                <td><span class="badge badge-red">Cancelled</span></td>
+                <td class="gold">520,000,000 T</td>
+                <td class="muted">260,000,000 T</td>
+                <td class="muted">260,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Normal</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/12</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mono">SR-1040</td>
+                <td class="muted">U-041</td>
+                <td><span class="badge">Out for delivery</span></td>
+                <td class="gold">230,000,000 T</td>
+                <td class="muted">115,000,000 T</td>
+                <td class="muted">115,000,000 T</td>
+                <td>
+                  <span style="display:inline-flex;align-items:center;gap:0.35rem">
+                    <svg class="icon" style="width:16px;height:16px;display:inline;color:var(--sr-fg-muted)" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                    <span class="muted" style="font-size:0.75rem">Turbo</span>
+                  </span>
+                </td>
+                <td class="muted">1405/01/10</td>
+                <td>
+                  <div class="actions">
+                    <button title="View details"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                    <button title="Update status"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
