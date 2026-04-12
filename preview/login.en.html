@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Sign in — SilkRoad</title>
+    <meta name="description" content="Sign in to your SilkRoad wholesale buyer account — OTP mobile authentication" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-logo" viewBox="0 0 24 24">
+          <path d="M3 12c3-6 6-6 9 0s6 6 9 0" />
+          <circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          <circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.41a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2.05z" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="i-user" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="preview-note">
+      Static preview — the real OTP flow with Redis and SMS gateway lives in the Next.js app
+    </div>
+
+    <header class="site">
+      <div class="container bar">
+        <a href="en.html" class="brand">
+          <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+          <span class="brand-name">SilkRoad</span>
+        </a>
+        <nav class="main">
+          <a href="products.en.html">Products</a>
+          <a href="en.html#shipping">Shipping</a>
+          <a href="en.html#split">Split Payment</a>
+          <a href="en.html#about">About</a>
+        </nav>
+        <div class="header-cta">
+          <div class="locale-toggle">
+            <a href="login.html">FA</a>
+            <a href="login.en.html" class="active">EN</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container auth-wrap">
+        <div class="card auth-card" style="text-align: center">
+          <div class="icon-circle">
+            <svg class="icon icon-lg"><use href="#i-phone" /></svg>
+          </div>
+          <h1>Sign in</h1>
+          <p class="sub">Enter your Iranian mobile number</p>
+
+          <form onsubmit="return false" style="text-align: start">
+            <div class="form-group">
+              <label for="phone">Mobile number</label>
+              <input id="phone" type="tel" dir="ltr" inputmode="numeric" placeholder="09123456789" />
+            </div>
+            <button type="button" class="btn btn-primary btn-xl btn-block">
+              Send verification code
+            </button>
+          </form>
+
+          <div class="footer">
+            Don't have an account? <a href="register.en.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="brand" style="margin-bottom: 0.75rem">
+              <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+              <span class="brand-name">SilkRoad</span>
+            </div>
+            <p>China-to-Iran B2B wholesale marketplace. Reliable imports, split payments, and three shipping tiers.</p>
+          </div>
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="products.en.html">Products</a></li>
+              <li><a href="en.html#shipping">Shipping tiers</a></li>
+              <li><a href="en.html#split">Split payment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>info@silkroad.ir</li>
+              <li>021 — coming soon</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">© 2026 SilkRoad — All rights reserved</div>
+      </div>
+    </footer>
+  </body>
+</html>
