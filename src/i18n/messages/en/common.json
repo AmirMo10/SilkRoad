@@ -19,5 +19,13 @@
     "viewProducts": "Browse products",
     "learnMore": "Learn more",
     "addToCart": "Add to cart"
+  },
+  "toast": {
+    "addedToCart": "Product added to cart",
+    "removedFromCart": "Product removed from cart",
+    "otpSent": "Verification code sent",
+    "loginSuccess": "Logged in successfully",
+    "logoutSuccess": "Logged out successfully",
+    "error": "Something went wrong. Please try again."
   }
 }

@@ -79,15 +79,16 @@
           <a href="en.html#about">About</a>
         </nav>
         <div class="header-cta">
-          <div class="locale-toggle">
-            <a href="products.html">FA</a>
-            <a href="products.en.html" class="active">EN</a>
-          </div>
+          <a href="cart.en.html" class="cart-link" title="Cart"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="badge-count">2</span></a>
+          <div class="locale-toggle"><a href="products.html">FA</a><a href="products.en.html" class="active">EN</a></div>
           <a href="admin.en.html" class="btn btn-secondary btn-sm">Admin</a>
           <a href="login.en.html" class="btn btn-primary btn-sm">Sign in</a>
+          <button class="hamburger" onclick="document.getElementById('drawer').classList.add('open');document.getElementById('backdrop').classList.add('open')" aria-label="Menu"><svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
         </div>
       </div>
     </header>
+    <div id="backdrop" class="mobile-backdrop" onclick="this.classList.remove('open');document.getElementById('drawer').classList.remove('open')"></div>
+    <aside id="drawer" class="mobile-drawer"><div class="drawer-head"><span class="brand-name" style="background:linear-gradient(to right,var(--sr-gold-300),var(--sr-gold-400),var(--sr-gold-500));-webkit-background-clip:text;background-clip:text;color:transparent">SilkRoad</span><button class="drawer-close" onclick="document.getElementById('drawer').classList.remove('open');document.getElementById('backdrop').classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><nav><a href="en.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> Home</a><a href="products.en.html" class="active"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg> Products</a><a href="cart.en.html"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Cart</a><a href="admin.en.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Admin</a></nav><div class="drawer-footer"><a href="login.en.html" class="btn btn-primary" style="width:100%;text-align:center;text-decoration:none">Sign in</a></div></aside>
 
     <main>
       <section class="page-header">
