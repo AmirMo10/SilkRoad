@@ -19,5 +19,13 @@
     "viewProducts": "مشاهده محصولات",
     "learnMore": "اطلاعات بیشتر",
     "addToCart": "افزودن به سبد"
+  },
+  "toast": {
+    "addedToCart": "محصول به سبد خرید اضافه شد",
+    "removedFromCart": "محصول از سبد خرید حذف شد",
+    "otpSent": "کد تأیید ارسال شد",
+    "loginSuccess": "ورود موفق",
+    "logoutSuccess": "خروج موفق",
+    "error": "خطایی رخ داد. لطفاً دوباره تلاش کنید."
   }
 }

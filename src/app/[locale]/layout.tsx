@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, localeDirection, type Locale } from "@/i18n/config";
+import { ToastContainer } from "@/components/ui/toast";
 import "@/styles/globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -40,6 +41,7 @@ export default async function RootLayout({
       <body className={vazirmatn.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <ToastContainer />
         </NextIntlClientProvider>
       </body>
     </html>
