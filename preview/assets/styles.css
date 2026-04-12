@@ -108,6 +108,8 @@ nav.main a:hover { color: var(--sr-gold-400); }
 nav.main a.active { color: var(--sr-gold-300); }
 
 .header-cta { display: flex; gap: 0.75rem; align-items: center; }
+.header-cta .btn { display: none; }
+@media (min-width: 768px) { .header-cta .btn { display: inline-flex; } }
 
 /* Mobile hamburger */
 .hamburger {
