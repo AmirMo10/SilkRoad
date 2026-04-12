@@ -14,6 +14,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       shipping: (await import(`./messages/${locale}/shipping.json`)).default,
       checkout: (await import(`./messages/${locale}/checkout.json`)).default,
       cart: (await import(`./messages/${locale}/cart.json`)).default,
+      auth: (await import(`./messages/${locale}/auth.json`)).default,
       errors: (await import(`./messages/${locale}/errors.json`)).default,
     };
     return { locale, messages };

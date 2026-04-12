@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Create account — SilkRoad</title>
+    <meta name="description" content="Create your SilkRoad wholesale buyer account" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-logo" viewBox="0 0 24 24">
+          <path d="M3 12c3-6 6-6 9 0s6 6 9 0" />
+          <circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          <circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="i-user" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="preview-note">
+      Static preview — the real form with Zod validation and OTP lives in the Next.js app
+    </div>
+
+    <header class="site">
+      <div class="container bar">
+        <a href="en.html" class="brand">
+          <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+          <span class="brand-name">SilkRoad</span>
+        </a>
+        <nav class="main">
+          <a href="products.en.html">Products</a>
+          <a href="en.html#shipping">Shipping</a>
+          <a href="en.html#split">Split Payment</a>
+          <a href="en.html#about">About</a>
+        </nav>
+        <div class="header-cta">
+          <div class="locale-toggle">
+            <a href="register.html">FA</a>
+            <a href="register.en.html" class="active">EN</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container auth-wrap">
+        <div class="card auth-card" style="text-align: center">
+          <div class="icon-circle">
+            <svg class="icon icon-lg"><use href="#i-user" /></svg>
+          </div>
+          <h1>Create account</h1>
+          <p class="sub">Set up your wholesale buyer account</p>
+
+          <form onsubmit="return false" style="text-align: start">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile number</label>
+              <input id="phone" type="tel" dir="ltr" inputmode="numeric" placeholder="09123456789" />
+            </div>
+            <button type="button" class="btn btn-primary btn-xl btn-block">
+              Send verification code
+            </button>
+          </form>
+
+          <div class="footer">
+            Already have an account? <a href="login.en.html">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="brand" style="margin-bottom: 0.75rem">
+              <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+              <span class="brand-name">SilkRoad</span>
+            </div>
+            <p>China-to-Iran B2B wholesale marketplace. Reliable imports, split payments, and three shipping tiers.</p>
+          </div>
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="products.en.html">Products</a></li>
+              <li><a href="en.html#shipping">Shipping tiers</a></li>
+              <li><a href="en.html#split">Split payment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>info@silkroad.ir</li>
+              <li>021 — coming soon</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">© 2026 SilkRoad — All rights reserved</div>
+      </div>
+    </footer>
+  </body>
+</html>

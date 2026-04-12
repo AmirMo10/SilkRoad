@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations, getLocale } from "next-intl/server";
-import { Button } from "@/components/ui/button";
+import { AuthButton } from "./auth-button";
 
 export async function Header() {
   const t = await getTranslations("common");
@@ -27,7 +27,7 @@ export async function Header() {
             {t("nav.about")}
           </Link>
         </nav>
-        <Button size="sm">{t("nav.login")}</Button>
+        <AuthButton />
       </div>
     </header>
   );
