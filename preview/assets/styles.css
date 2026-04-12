@@ -128,6 +128,7 @@ nav.main a.active { color: var(--sr-gold-300); }
 }
 .btn-secondary:hover { border-color: var(--sr-gold-400); color: var(--sr-gold-300); }
 .btn .icon { width: 18px; height: 18px; stroke-width: 2; }
+.btn-sm { padding: 0.45rem 1rem; font-size: 0.85rem; border-radius: 0.55rem; }
 .btn-lg { padding: 1rem 2rem; font-size: 1rem; }
 .btn-xl { padding: 1.15rem 2.25rem; font-size: 1.05rem; }
 
