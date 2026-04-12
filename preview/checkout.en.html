@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Checkout — SilkRoad</title>
+    <meta name="description" content="SilkRoad checkout — shipping tier selection and split payment" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-logo" viewBox="0 0 24 24">
+          <path d="M3 12c3-6 6-6 9 0s6 6 9 0" />
+          <circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          <circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" />
+        </symbol>
+        <symbol id="i-package" viewBox="0 0 24 24">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
+        </symbol>
+        <symbol id="i-wave" viewBox="0 0 24 24">
+          <path d="M2 12c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+          <path d="M2 17c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+          <path d="M2 7c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v10" />
+          <path d="M15 9.5c0-1.1-1.34-2-3-2s-3 .9-3 2 1.5 1.8 3 2 3 .9 3 2-1.34 2-3 2-3-.9-3-2" />
+        </symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24">
+          <rect x="1" y="6" width="14" height="11" rx="1" />
+          <path d="M15 10h4l3 3v4h-7z" />
+          <circle cx="6" cy="19" r="2" />
+          <circle cx="18" cy="19" r="2" />
+        </symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="preview-note">
+      Static preview — the real flow with tRPC and payment gateway lives in the Next.js app
+    </div>
+
+    <header class="site">
+      <div class="container bar">
+        <a href="en.html" class="brand">
+          <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+          <span class="brand-name">SilkRoad</span>
+        </a>
+        <nav class="main">
+          <a href="products.en.html">Products</a>
+          <a href="en.html#shipping">Shipping</a>
+          <a href="en.html#split">Split Payment</a>
+          <a href="en.html#about">About</a>
+        </nav>
+        <div class="header-cta">
+          <div class="locale-toggle">
+            <a href="checkout.html">FA</a>
+            <a href="checkout.en.html" class="active">EN</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol class="container">
+          <li><a href="en.html">Home</a></li>
+          <li class="sep">/</li>
+          <li><a href="cart.en.html">Cart</a></li>
+          <li class="sep">/</li>
+          <li class="current">Checkout</li>
+        </ol>
+      </nav>
+
+      <section style="padding: 2.5rem 0 5rem">
+        <div class="container">
+          <header style="margin-bottom: 2.5rem">
+            <h1 style="font-size: 2rem; font-weight: 900; letter-spacing: -0.02em">Checkout</h1>
+            <p style="color: var(--sr-fg-muted); margin-top: 0.5rem">Choose your shipping tier and pay the first phase to confirm the order.</p>
+          </header>
+
+          <div class="checkout-layout">
+            <div>
+              <section style="margin-bottom: 2.5rem">
+                <h2 class="section-heading">Shipping tier</h2>
+                <form class="tier-picker">
+                  <label>
+                    <input type="radio" name="tier" value="turbo" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-bolt" /></svg></div>
+                    <h4>Turbo</h4>
+                    <p>Air freight — the fastest option</p>
+                    <div class="eta">7 to 15 business days</div>
+                    <div class="cost">39,500,000 Toman</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="normal" checked />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-package" /></svg></div>
+                    <h4>Normal</h4>
+                    <p>Mixed transport — balanced cost and speed</p>
+                    <div class="eta">20 to 35 business days</div>
+                    <div class="cost">19,800,000 Toman</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="economy" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-wave" /></svg></div>
+                    <h4>Economy</h4>
+                    <p>Sea freight — lowest cost</p>
+                    <div class="eta">45 to 70 business days</div>
+                    <div class="cost">8,275,000 Toman</div>
+                  </label>
+                </form>
+              </section>
+
+              <section>
+                <h2 class="section-heading">Split payment</h2>
+                <div class="phase-grid">
+                  <div class="card phase-card">
+                    <span class="badge"><svg class="icon icon-xs"><use href="#i-coin" /></svg> Phase 1</span>
+                    <div class="desc">Paid now to confirm your wholesale order.</div>
+                    <div class="amt">207,400,000 Toman</div>
+                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
+                  </div>
+                  <div class="card phase-card">
+                    <span class="badge"><svg class="icon icon-xs"><use href="#i-truck" /></svg> Phase 2</span>
+                    <div class="desc">Paid once the shipment arrives in Iran, before final delivery.</div>
+                    <div class="amt">207,400,000 Toman</div>
+                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <aside class="card summary-card">
+              <h3>Order review</h3>
+              <div class="summary-row">
+                <span class="muted">Subtotal</span>
+                <span>395,000,000 Toman</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">Shipping</span>
+                <span>19,800,000 Toman</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span class="num">414,800,000 Toman</span>
+              </div>
+              <div class="summary-row" style="font-size: 0.75rem">
+                <span class="muted">Estimated delivery</span>
+                <span>20–35 days</span>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-xl btn-block">
+                Pay phase 1 now
+                <svg class="icon"><use href="#i-arrow-right" /></svg>
+              </button>
+              <a href="cart.en.html" style="display: block; text-align: center; font-size: 0.75rem; color: var(--sr-fg-muted); text-decoration: none">
+                ← Back to cart
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="brand" style="margin-bottom: 0.75rem">
+              <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+              <span class="brand-name">SilkRoad</span>
+            </div>
+            <p>China-to-Iran B2B wholesale marketplace. Reliable imports, split payments, and three shipping tiers.</p>
+          </div>
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="products.en.html">Products</a></li>
+              <li><a href="en.html#shipping">Shipping tiers</a></li>
+              <li><a href="en.html#split">Split payment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>info@silkroad.ir</li>
+              <li>021 — coming soon</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">© 2026 SilkRoad — All rights reserved</div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Icon, type IconName } from "@/components/ui/icon";
+import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { formatToman, formatMoq, toPersianDigits } from "@/lib/formatters";
 import { calculateSplit } from "@/lib/payment-calculator";
 import { TRPCError } from "@trpc/server";
@@ -150,17 +151,20 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 </div>
               </Card>
 
-              <Link
-                href="/cart"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-[var(--sr-radius)] bg-gradient-to-b from-[var(--sr-gold-400)] to-[var(--sr-gold-500)] px-8 text-lg font-semibold text-[var(--sr-navy-950)] shadow-[0_8px_24px_-8px_rgba(212,175,55,0.6)] hover:brightness-110"
-              >
-                {tProducts("detail.addToCart")}
-                <Icon
-                  name={locale === "fa" ? "arrowLeft" : "arrowRight"}
-                  size={20}
-                  strokeWidth={2}
-                />
-              </Link>
+              <AddToCartButton
+                productId={product.id}
+                slug={product.slug}
+                nameFa={product.nameFa}
+                nameEn={product.nameEn}
+                iconSlug={ICON_BY_SLUG[product.slug] ?? "box"}
+                priceToman={priceToman}
+                moq={product.moq}
+                quantityStep={product.quantityStep}
+                weightKg={Number(product.weightKg)}
+                volumeCbm={Number(product.volumeCbm)}
+                label={tProducts("detail.addToCart")}
+                locale={locale}
+              />
             </div>
           </div>
         </section>

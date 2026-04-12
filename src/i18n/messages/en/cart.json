@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "Shopping cart",
+    "subtitle": "Review and confirm your order",
+    "empty": "Your cart is empty",
+    "emptyCta": "Browse the catalog"
+  },
+  "item": {
+    "perUnit": "per unit",
+    "lineTotal": "Line total",
+    "remove": "Remove",
+    "moqWarning": "Quantity is below MOQ"
+  },
+  "summary": {
+    "title": "Order summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "secure": "Secure payment",
+    "splitTitle": "Split payment",
+    "phase1": "Upfront",
+    "phase1Desc": "At order confirmation",
+    "phase2": "Remaining",
+    "phase2Desc": "On arrival in Iran",
+    "proceed": "Proceed to checkout",
+    "moqError": "One or more items are below their MOQ"
+  }
+}
