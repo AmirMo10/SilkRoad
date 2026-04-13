@@ -104,13 +104,13 @@
             <div>
               <section style="margin-bottom: 2.5rem">
                 <h2 class="section-heading">Shipping tier</h2>
-                <form class="tier-picker">
+                <form class="tier-picker" id="checkout-tier-picker">
                   <label>
                     <input type="radio" name="tier" value="turbo" />
                     <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-bolt" /></svg></div>
                     <h4>Turbo</h4>
                     <p>Air freight — the fastest option</p>
-                    <div class="eta">7 to 15 business days</div>
+                    <div class="eta">7–15 business days</div>
                     <div class="cost">39,500,000 Toman</div>
                   </label>
                   <label>
@@ -118,7 +118,7 @@
                     <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-package" /></svg></div>
                     <h4>Normal</h4>
                     <p>Mixed transport — balanced cost and speed</p>
-                    <div class="eta">20 to 35 business days</div>
+                    <div class="eta">20–35 business days</div>
                     <div class="cost">19,800,000 Toman</div>
                   </label>
                   <label>
@@ -126,7 +126,7 @@
                     <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-wave" /></svg></div>
                     <h4>Economy</h4>
                     <p>Sea freight — lowest cost</p>
-                    <div class="eta">45 to 70 business days</div>
+                    <div class="eta">45–70 business days</div>
                     <div class="cost">8,275,000 Toman</div>
                   </label>
                 </form>
@@ -138,13 +138,13 @@
                   <div class="card phase-card">
                     <span class="badge"><svg class="icon icon-xs"><use href="#i-coin" /></svg> Phase 1</span>
                     <div class="desc">Paid now to confirm your wholesale order.</div>
-                    <div class="amt">207,400,000 Toman</div>
+                    <div class="amt" id="phase1-amt">207,400,000 Toman</div>
                     <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
                   </div>
                   <div class="card phase-card">
                     <span class="badge"><svg class="icon icon-xs"><use href="#i-truck" /></svg> Phase 2</span>
                     <div class="desc">Paid once the shipment arrives in Iran, before final delivery.</div>
-                    <div class="amt">207,400,000 Toman</div>
+                    <div class="amt" id="phase2-amt">207,400,000 Toman</div>
                     <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
                   </div>
                 </div>
@@ -159,15 +159,15 @@
               </div>
               <div class="summary-row">
                 <span class="muted">Shipping</span>
-                <span>19,800,000 Toman</span>
+                <span id="shipping-cost">19,800,000 Toman</span>
               </div>
               <div class="summary-row total">
                 <span>Total</span>
-                <span class="num">414,800,000 Toman</span>
+                <span class="num" id="total-cost">414,800,000 Toman</span>
               </div>
               <div class="summary-row" style="font-size: 0.75rem">
                 <span class="muted">Estimated delivery</span>
-                <span>20–35 days</span>
+                <span id="eta-range">20–35 days</span>
               </div>
 
               <button type="button" class="btn btn-primary btn-xl btn-block">
@@ -179,6 +179,33 @@
               </a>
             </aside>
           </div>
+
+          <script>
+          (function(){
+            var SUBTOTAL = 395000000;
+            var TIERS = {
+              turbo:   { cost: 39500000, eta: '7–15 days' },
+              normal:  { cost: 19800000, eta: '20–35 days' },
+              economy: { cost: 8275000,  eta: '45–70 days' }
+            };
+            function fmt(n){
+              return Math.round(n).toLocaleString('en-US') + ' Toman';
+            }
+            var form = document.getElementById('checkout-tier-picker');
+            form.addEventListener('change', function(e){
+              var tier = e.target.value;
+              var info = TIERS[tier];
+              if (!info) return;
+              var total = SUBTOTAL + info.cost;
+              var half = Math.round(total / 2);
+              document.getElementById('shipping-cost').textContent = fmt(info.cost);
+              document.getElementById('total-cost').textContent = fmt(total);
+              document.getElementById('eta-range').textContent = info.eta;
+              document.getElementById('phase1-amt').textContent = fmt(half);
+              document.getElementById('phase2-amt').textContent = fmt(half);
+            });
+          })();
+          </script>
         </div>
       </section>
     </main>

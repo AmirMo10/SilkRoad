@@ -95,42 +95,74 @@
           </header>
 
           <div class="cart-layout">
-            <div class="cart-lines">
-              <div class="card cart-item">
-                <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
-                <div class="info">
-                  <h3>Next-Gen Wireless Headphones</h3>
-                  <div class="meta">Per unit: 185,000 Toman • MOQ: 1,000 units</div>
+            <div>
+              <div class="cart-lines">
+                <div class="card cart-item">
+                  <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
+                  <div class="info">
+                    <h3>Next-Gen Wireless Headphones</h3>
+                    <div class="meta">Per unit: 185,000 Toman • MOQ: 1,000 units</div>
+                  </div>
+                  <div class="qty">
+                    <button type="button" aria-label="Decrease">−</button>
+                    <input type="number" value="1000" readonly />
+                    <button type="button" aria-label="Increase">+</button>
+                  </div>
+                  <div class="line-total">
+                    <div class="label">Line total</div>
+                    <div class="num">185,000,000 Toman</div>
+                  </div>
+                  <button type="button" class="remove" aria-label="Remove"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
-                <div class="qty">
-                  <button type="button" aria-label="Decrease">−</button>
-                  <input type="number" value="1000" readonly />
-                  <button type="button" aria-label="Increase">+</button>
+
+                <div class="card cart-item">
+                  <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
+                  <div class="info">
+                    <h3>Smart Sport Watch</h3>
+                    <div class="meta">Per unit: 420,000 Toman • MOQ: 500 units</div>
+                  </div>
+                  <div class="qty">
+                    <button type="button" aria-label="Decrease">−</button>
+                    <input type="number" value="500" readonly />
+                    <button type="button" aria-label="Increase">+</button>
+                  </div>
+                  <div class="line-total">
+                    <div class="label">Line total</div>
+                    <div class="num">210,000,000 Toman</div>
+                  </div>
+                  <button type="button" class="remove" aria-label="Remove"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
-                <div class="line-total">
-                  <div class="label">Line total</div>
-                  <div class="num">185,000,000 Toman</div>
-                </div>
-                <button type="button" class="remove" aria-label="Remove"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
               </div>
 
-              <div class="card cart-item">
-                <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
-                <div class="info">
-                  <h3>Smart Sport Watch</h3>
-                  <div class="meta">Per unit: 420,000 Toman • MOQ: 500 units</div>
-                </div>
-                <div class="qty">
-                  <button type="button" aria-label="Decrease">−</button>
-                  <input type="number" value="500" readonly />
-                  <button type="button" aria-label="Increase">+</button>
-                </div>
-                <div class="line-total">
-                  <div class="label">Line total</div>
-                  <div class="num">210,000,000 Toman</div>
-                </div>
-                <button type="button" class="remove" aria-label="Remove"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
-              </div>
+              <section style="margin-top: 2rem">
+                <h2 class="section-heading">Shipping tier</h2>
+                <form class="tier-picker" id="cart-tier-picker">
+                  <label>
+                    <input type="radio" name="tier" value="turbo" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-bolt" /></svg></div>
+                    <h4>Turbo</h4>
+                    <p>Air freight — the fastest option</p>
+                    <div class="eta">7–15 business days</div>
+                    <div class="cost">39,500,000 Toman</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="normal" checked />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-package" /></svg></div>
+                    <h4>Normal</h4>
+                    <p>Mixed transport — balanced cost and speed</p>
+                    <div class="eta">20–35 business days</div>
+                    <div class="cost">19,800,000 Toman</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="economy" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-wave" /></svg></div>
+                    <h4>Economy</h4>
+                    <p>Sea freight — lowest cost</p>
+                    <div class="eta">45–70 business days</div>
+                    <div class="cost">8,275,000 Toman</div>
+                  </label>
+                </form>
+              </section>
             </div>
 
             <aside class="card summary-card">
@@ -140,12 +172,12 @@
                 <span>395,000,000 Toman</span>
               </div>
               <div class="summary-row">
-                <span class="muted">Shipping (Normal)</span>
-                <span>19,800,000 Toman</span>
+                <span class="muted">Shipping (<span id="tier-label">Normal</span>)</span>
+                <span id="shipping-cost">19,800,000 Toman</span>
               </div>
               <div class="summary-row total">
                 <span>Total</span>
-                <span class="num">414,800,000 Toman</span>
+                <span class="num" id="total-cost">414,800,000 Toman</span>
               </div>
 
               <div class="split-inline">
@@ -156,7 +188,7 @@
                     <div class="sub">To confirm your order</div>
                   </div>
                   <div>
-                    <div class="amt">207,400,000 Toman</div>
+                    <div class="amt" id="phase1-amt">207,400,000 Toman</div>
                     <div class="pct">50%</div>
                   </div>
                 </div>
@@ -166,7 +198,7 @@
                     <div class="sub">Before final delivery</div>
                   </div>
                   <div>
-                    <div class="amt">207,400,000 Toman</div>
+                    <div class="amt" id="phase2-amt">207,400,000 Toman</div>
                     <div class="pct">50%</div>
                   </div>
                 </div>
@@ -182,6 +214,33 @@
               </div>
             </aside>
           </div>
+
+          <script>
+          (function(){
+            var SUBTOTAL = 395000000;
+            var TIERS = {
+              turbo:   { cost: 39500000, label: 'Turbo' },
+              normal:  { cost: 19800000, label: 'Normal' },
+              economy: { cost: 8275000,  label: 'Economy' }
+            };
+            function fmt(n){
+              return Math.round(n).toLocaleString('en-US') + ' Toman';
+            }
+            var form = document.getElementById('cart-tier-picker');
+            form.addEventListener('change', function(e){
+              var tier = e.target.value;
+              var info = TIERS[tier];
+              if (!info) return;
+              var total = SUBTOTAL + info.cost;
+              var half = Math.round(total / 2);
+              document.getElementById('tier-label').textContent = info.label;
+              document.getElementById('shipping-cost').textContent = fmt(info.cost);
+              document.getElementById('total-cost').textContent = fmt(total);
+              document.getElementById('phase1-amt').textContent = fmt(half);
+              document.getElementById('phase2-amt').textContent = fmt(half);
+            });
+          })();
+          </script>
         </div>
       </section>
     </main>

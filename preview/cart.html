@@ -98,42 +98,74 @@
           </header>
 
           <div class="cart-layout">
-            <div class="cart-lines">
-              <div class="card cart-item">
-                <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
-                <div class="info">
-                  <h3>هدفون بی‌سیم نسل جدید</h3>
-                  <div class="meta">قیمت هر واحد: ۱۸۵,۰۰۰ تومان • حداقل سفارش: ۱,۰۰۰ عدد</div>
+            <div>
+              <div class="cart-lines">
+                <div class="card cart-item">
+                  <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
+                  <div class="info">
+                    <h3>هدفون بی‌سیم نسل جدید</h3>
+                    <div class="meta">قیمت هر واحد: ۱۸۵,۰۰۰ تومان • حداقل سفارش: ۱,۰۰۰ عدد</div>
+                  </div>
+                  <div class="qty">
+                    <button type="button" aria-label="کاهش">−</button>
+                    <input type="number" value="۱٬۰۰۰" readonly />
+                    <button type="button" aria-label="افزایش">+</button>
+                  </div>
+                  <div class="line-total">
+                    <div class="label">مجموع ردیف</div>
+                    <div class="num">۱۸۵,۰۰۰,۰۰۰ تومان</div>
+                  </div>
+                  <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
-                <div class="qty">
-                  <button type="button" aria-label="کاهش">−</button>
-                  <input type="number" value="۱٬۰۰۰" readonly />
-                  <button type="button" aria-label="افزایش">+</button>
+
+                <div class="card cart-item">
+                  <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
+                  <div class="info">
+                    <h3>ساعت هوشمند ورزشی</h3>
+                    <div class="meta">قیمت هر واحد: ۴۲۰,۰۰۰ تومان • حداقل سفارش: ۵۰۰ عدد</div>
+                  </div>
+                  <div class="qty">
+                    <button type="button" aria-label="کاهش">−</button>
+                    <input type="number" value="۵۰۰" readonly />
+                    <button type="button" aria-label="افزایش">+</button>
+                  </div>
+                  <div class="line-total">
+                    <div class="label">مجموع ردیف</div>
+                    <div class="num">۲۱۰,۰۰۰,۰۰۰ تومان</div>
+                  </div>
+                  <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
-                <div class="line-total">
-                  <div class="label">مجموع ردیف</div>
-                  <div class="num">۱۸۵,۰۰۰,۰۰۰ تومان</div>
-                </div>
-                <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
               </div>
 
-              <div class="card cart-item">
-                <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
-                <div class="info">
-                  <h3>ساعت هوشمند ورزشی</h3>
-                  <div class="meta">قیمت هر واحد: ۴۲۰,۰۰۰ تومان • حداقل سفارش: ۵۰۰ عدد</div>
-                </div>
-                <div class="qty">
-                  <button type="button" aria-label="کاهش">−</button>
-                  <input type="number" value="۵۰۰" readonly />
-                  <button type="button" aria-label="افزایش">+</button>
-                </div>
-                <div class="line-total">
-                  <div class="label">مجموع ردیف</div>
-                  <div class="num">۲۱۰,۰۰۰,۰۰۰ تومان</div>
-                </div>
-                <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
-              </div>
+              <section style="margin-top: 2rem">
+                <h2 class="section-heading">روش ارسال</h2>
+                <form class="tier-picker" id="cart-tier-picker">
+                  <label>
+                    <input type="radio" name="tier" value="turbo" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-bolt" /></svg></div>
+                    <h4>اکسپرس</h4>
+                    <p>ارسال هوایی، سریع‌ترین گزینه</p>
+                    <div class="eta">۷ تا ۱۵ روز کاری</div>
+                    <div class="cost">۳۹,۵۰۰,۰۰۰ تومان</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="normal" checked />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-package" /></svg></div>
+                    <h4>عادی</h4>
+                    <p>ترکیبی، تعادل قیمت و سرعت</p>
+                    <div class="eta">۲۰ تا ۳۵ روز کاری</div>
+                    <div class="cost">۱۹,۸۰۰,۰۰۰ تومان</div>
+                  </label>
+                  <label>
+                    <input type="radio" name="tier" value="economy" />
+                    <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-wave" /></svg></div>
+                    <h4>اقتصادی</h4>
+                    <p>ارسال دریایی، کم‌هزینه‌ترین</p>
+                    <div class="eta">۴۵ تا ۷۰ روز کاری</div>
+                    <div class="cost">۸,۲۷۵,۰۰۰ تومان</div>
+                  </label>
+                </form>
+              </section>
             </div>
 
             <aside class="card summary-card">
@@ -143,12 +175,12 @@
                 <span>۳۹۵,۰۰۰,۰۰۰ تومان</span>
               </div>
               <div class="summary-row">
-                <span class="muted">هزینه ارسال (عادی)</span>
-                <span>۱۹,۸۰۰,۰۰۰ تومان</span>
+                <span class="muted">هزینه ارسال (<span id="tier-label">عادی</span>)</span>
+                <span id="shipping-cost">۱۹,۸۰۰,۰۰۰ تومان</span>
               </div>
               <div class="summary-row total">
                 <span>مبلغ کل</span>
-                <span class="num">۴۱۴,۸۰۰,۰۰۰ تومان</span>
+                <span class="num" id="total-cost">۴۱۴,۸۰۰,۰۰۰ تومان</span>
               </div>
 
               <div class="split-inline">
@@ -159,7 +191,7 @@
                     <div class="sub">برای تایید سفارش</div>
                   </div>
                   <div>
-                    <div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+                    <div class="amt" id="phase1-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
                     <div class="pct">۵۰٪</div>
                   </div>
                 </div>
@@ -169,7 +201,7 @@
                     <div class="sub">پیش از تحویل نهایی</div>
                   </div>
                   <div>
-                    <div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+                    <div class="amt" id="phase2-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
                     <div class="pct">۵۰٪</div>
                   </div>
                 </div>
@@ -185,6 +217,37 @@
               </div>
             </aside>
           </div>
+
+          <script>
+          (function(){
+            var SUBTOTAL = 395000000;
+            var TIERS = {
+              turbo:   { cost: 39500000, label: 'اکسپرس' },
+              normal:  { cost: 19800000, label: 'عادی' },
+              economy: { cost: 8275000,  label: 'اقتصادی' }
+            };
+            var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+            function toFa(n){
+              return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; });
+            }
+            function fmt(n){
+              return toFa(Math.round(n).toLocaleString('en-US')) + ' تومان';
+            }
+            var form = document.getElementById('cart-tier-picker');
+            form.addEventListener('change', function(e){
+              var tier = e.target.value;
+              var info = TIERS[tier];
+              if (!info) return;
+              var total = SUBTOTAL + info.cost;
+              var half = Math.round(total / 2);
+              document.getElementById('tier-label').textContent = info.label;
+              document.getElementById('shipping-cost').textContent = fmt(info.cost);
+              document.getElementById('total-cost').textContent = fmt(total);
+              document.getElementById('phase1-amt').textContent = fmt(half);
+              document.getElementById('phase2-amt').textContent = fmt(half);
+            });
+          })();
+          </script>
         </div>
       </section>
     </main>
