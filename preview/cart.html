@@ -72,12 +72,12 @@
           </div>
           <a href="admin.html" class="btn btn-secondary btn-sm">پنل مدیریت</a>
           <a href="login.html" class="btn btn-primary btn-sm">ورود/ثبت‌نام</a>
-          <button class="hamburger" onclick="document.getElementById('drawer').classList.add('open');document.getElementById('backdrop').classList.add('open')" aria-label="منو"><svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <button class="hamburger" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.add('open');d.style.transform='translateX(0)';b.classList.add('open')" aria-label="منو"><svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
         </div>
       </div>
     </header>
-    <div id="backdrop" class="mobile-backdrop" onclick="this.classList.remove('open');document.getElementById('drawer').classList.remove('open')"></div>
-    <aside id="drawer" class="mobile-drawer"><div class="drawer-head"><span class="brand-name" style="background:linear-gradient(to left,var(--sr-gold-300),var(--sr-gold-400),var(--sr-gold-500));-webkit-background-clip:text;background-clip:text;color:transparent">راه ابریشم</span><button class="drawer-close" onclick="document.getElementById('drawer').classList.remove('open');document.getElementById('backdrop').classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><nav><a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> خانه</a><a href="products.html"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg> محصولات</a><a href="cart.html" class="active"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> سبد خرید</a><a href="admin.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> پنل مدیریت</a></nav><div class="drawer-footer"><a href="login.html" class="btn btn-primary" style="width:100%;text-align:center;text-decoration:none">ورود/ثبت‌نام</a></div></aside>
+    <div id="backdrop" class="mobile-backdrop" onclick="var d=document.getElementById('drawer');d.classList.remove('open');d.style.transform='';this.classList.remove('open')"></div>
+    <aside id="drawer" class="mobile-drawer"><div class="drawer-head"><span class="brand-name" style="background:linear-gradient(to left,var(--sr-gold-300),var(--sr-gold-400),var(--sr-gold-500));-webkit-background-clip:text;background-clip:text;color:transparent">راه ابریشم</span><button class="drawer-close" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.remove('open');d.style.transform='';b.classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><nav><a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> خانه</a><a href="products.html"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg> محصولات</a><a href="cart.html" class="active"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> سبد خرید</a><a href="admin.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> پنل مدیریت</a></nav><div class="drawer-footer"><a href="login.html" class="btn btn-primary" style="width:100%;text-align:center;text-decoration:none">ورود/ثبت‌نام</a></div></aside>
 
     <main>
       <nav class="crumbs" aria-label="Breadcrumb">
@@ -99,39 +99,39 @@
 
           <div class="cart-layout">
             <div>
-              <div class="cart-lines">
-                <div class="card cart-item">
+              <div class="cart-lines" id="cart-lines">
+                <div class="card cart-item" data-id="1" data-price="185000" data-moq="1000" data-step="100">
                   <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
                   <div class="info">
                     <h3>هدفون بی‌سیم نسل جدید</h3>
                     <div class="meta">قیمت هر واحد: ۱۸۵,۰۰۰ تومان • حداقل سفارش: ۱,۰۰۰ عدد</div>
                   </div>
                   <div class="qty">
-                    <button type="button" aria-label="کاهش">−</button>
-                    <input type="number" value="۱٬۰۰۰" readonly />
-                    <button type="button" aria-label="افزایش">+</button>
+                    <button type="button" class="qty-minus" aria-label="کاهش">−</button>
+                    <input type="text" class="qty-input" value="۱,۰۰۰" readonly />
+                    <button type="button" class="qty-plus" aria-label="افزایش">+</button>
                   </div>
                   <div class="line-total">
                     <div class="label">مجموع ردیف</div>
-                    <div class="num">۱۸۵,۰۰۰,۰۰۰ تومان</div>
+                    <div class="num line-amt">۱۸۵,۰۰۰,۰۰۰ تومان</div>
                   </div>
                   <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
 
-                <div class="card cart-item">
+                <div class="card cart-item" data-id="2" data-price="420000" data-moq="500" data-step="100">
                   <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
                   <div class="info">
                     <h3>ساعت هوشمند ورزشی</h3>
                     <div class="meta">قیمت هر واحد: ۴۲۰,۰۰۰ تومان • حداقل سفارش: ۵۰۰ عدد</div>
                   </div>
                   <div class="qty">
-                    <button type="button" aria-label="کاهش">−</button>
-                    <input type="number" value="۵۰۰" readonly />
-                    <button type="button" aria-label="افزایش">+</button>
+                    <button type="button" class="qty-minus" aria-label="کاهش">−</button>
+                    <input type="text" class="qty-input" value="۵۰۰" readonly />
+                    <button type="button" class="qty-plus" aria-label="افزایش">+</button>
                   </div>
                   <div class="line-total">
                     <div class="label">مجموع ردیف</div>
-                    <div class="num">۲۱۰,۰۰۰,۰۰۰ تومان</div>
+                    <div class="num line-amt">۲۱۰,۰۰۰,۰۰۰ تومان</div>
                   </div>
                   <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
@@ -172,7 +172,7 @@
               <h3>خلاصه سفارش</h3>
               <div class="summary-row">
                 <span class="muted">جمع کالا</span>
-                <span>۳۹۵,۰۰۰,۰۰۰ تومان</span>
+                <span id="subtotal-amt">۳۹۵,۰۰۰,۰۰۰ تومان</span>
               </div>
               <div class="summary-row">
                 <span class="muted">هزینه ارسال (<span id="tier-label">عادی</span>)</span>
@@ -220,32 +220,88 @@
 
           <script>
           (function(){
-            var SUBTOTAL = 395000000;
+            var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+            function toFa(n){ return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; }); }
+            function fmt(n){ return toFa(Math.round(n).toLocaleString('en-US')) + ' تومان'; }
+            function fmtQty(n){ return toFa(n.toLocaleString('en-US')); }
+
             var TIERS = {
               turbo:   { cost: 39500000, label: 'اکسپرس' },
               normal:  { cost: 19800000, label: 'عادی' },
               economy: { cost: 8275000,  label: 'اقتصادی' }
             };
-            var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
-            function toFa(n){
-              return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; });
+
+            function getSelectedTier(){
+              var r = document.querySelector('#cart-tier-picker input:checked');
+              return r ? r.value : 'normal';
             }
-            function fmt(n){
-              return toFa(Math.round(n).toLocaleString('en-US')) + ' تومان';
-            }
-            var form = document.getElementById('cart-tier-picker');
-            form.addEventListener('change', function(e){
-              var tier = e.target.value;
-              var info = TIERS[tier];
-              if (!info) return;
-              var total = SUBTOTAL + info.cost;
+
+            function recalc(){
+              var items = document.querySelectorAll('.cart-item');
+              var subtotal = 0;
+              items.forEach(function(el){
+                var price = +el.dataset.price;
+                var moq = +el.dataset.moq;
+                var step = +el.dataset.step;
+                var inp = el.querySelector('.qty-input');
+                var qty = +inp.dataset.qty;
+                var line = price * qty;
+                subtotal += line;
+                el.querySelector('.line-amt').textContent = fmt(line);
+                inp.value = fmtQty(qty);
+              });
+              var tier = TIERS[getSelectedTier()] || TIERS.normal;
+              var total = subtotal + tier.cost;
               var half = Math.round(total / 2);
-              document.getElementById('tier-label').textContent = info.label;
-              document.getElementById('shipping-cost').textContent = fmt(info.cost);
+
+              var sub = document.getElementById('subtotal-amt');
+              if (sub) sub.textContent = fmt(subtotal);
+              document.getElementById('tier-label').textContent = tier.label;
+              document.getElementById('shipping-cost').textContent = fmt(tier.cost);
               document.getElementById('total-cost').textContent = fmt(total);
               document.getElementById('phase1-amt').textContent = fmt(half);
               document.getElementById('phase2-amt').textContent = fmt(half);
+            }
+
+            // Initialize data-qty on inputs
+            document.querySelectorAll('.cart-item').forEach(function(el){
+              var inp = el.querySelector('.qty-input');
+              inp.dataset.qty = el.dataset.moq;
             });
+
+            // Qty +/- buttons
+            document.getElementById('cart-lines').addEventListener('click', function(e){
+              var btn = e.target.closest('.qty-plus, .qty-minus, .remove');
+              if (!btn) return;
+              var item = btn.closest('.cart-item');
+              if (!item) return;
+
+              if (btn.classList.contains('remove')){
+                item.remove();
+                recalc();
+                return;
+              }
+
+              var inp = item.querySelector('.qty-input');
+              var qty = +inp.dataset.qty;
+              var moq = +item.dataset.moq;
+              var step = +item.dataset.step;
+
+              if (btn.classList.contains('qty-plus')){
+                qty += step;
+              } else {
+                qty -= step;
+                if (qty < moq) qty = moq;
+              }
+              inp.dataset.qty = qty;
+              recalc();
+            });
+
+            // Tier picker
+            document.getElementById('cart-tier-picker').addEventListener('change', function(){ recalc(); });
+
+            // Initial calc
+            recalc();
           })();
           </script>
         </div>
