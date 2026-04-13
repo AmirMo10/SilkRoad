@@ -107,7 +107,7 @@
             <div>
               <section style="margin-bottom: 2.5rem">
                 <h2 class="section-heading">روش ارسال</h2>
-                <form class="tier-picker">
+                <form class="tier-picker" id="checkout-tier-picker">
                   <label>
                     <input type="radio" name="tier" value="turbo" />
                     <div class="tier-icon"><svg class="icon icon-lg"><use href="#i-bolt" /></svg></div>
@@ -141,13 +141,13 @@
                   <div class="card phase-card">
                     <span class="badge"><svg class="icon icon-xs"><use href="#i-coin" /></svg> مرحله اول</span>
                     <div class="desc">هنگام ثبت سفارش پرداخت می‌شود تا سفارش تایید شود.</div>
-                    <div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+                    <div class="amt" id="phase1-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
                     <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">۵۰٪ از کل</div>
                   </div>
                   <div class="card phase-card">
                     <span class="badge"><svg class="icon icon-xs"><use href="#i-truck" /></svg> مرحله دوم</span>
                     <div class="desc">پس از رسیدن محموله به ایران و پیش از تحویل نهایی پرداخت می‌شود.</div>
-                    <div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+                    <div class="amt" id="phase2-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
                     <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">۵۰٪ از کل</div>
                   </div>
                 </div>
@@ -162,15 +162,15 @@
               </div>
               <div class="summary-row">
                 <span class="muted">هزینه ارسال</span>
-                <span>۱۹,۸۰۰,۰۰۰ تومان</span>
+                <span id="shipping-cost">۱۹,۸۰۰,۰۰۰ تومان</span>
               </div>
               <div class="summary-row total">
                 <span>مبلغ کل</span>
-                <span class="num">۴۱۴,۸۰۰,۰۰۰ تومان</span>
+                <span class="num" id="total-cost">۴۱۴,۸۰۰,۰۰۰ تومان</span>
               </div>
               <div class="summary-row" style="font-size: 0.75rem">
                 <span class="muted">زمان تحویل تقریبی</span>
-                <span>۲۰–۳۵ روز</span>
+                <span id="eta-range">۲۰–۳۵ روز</span>
               </div>
 
               <button type="button" class="btn btn-primary btn-xl btn-block">
@@ -182,6 +182,37 @@
               </a>
             </aside>
           </div>
+
+          <script>
+          (function(){
+            var SUBTOTAL = 395000000;
+            var TIERS = {
+              turbo:   { cost: 39500000, eta: '۷–۱۵ روز' },
+              normal:  { cost: 19800000, eta: '۲۰–۳۵ روز' },
+              economy: { cost: 8275000,  eta: '۴۵–۷۰ روز' }
+            };
+            var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+            function toFa(n){
+              return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; });
+            }
+            function fmt(n){
+              return toFa(Math.round(n).toLocaleString('en-US')) + ' تومان';
+            }
+            var form = document.getElementById('checkout-tier-picker');
+            form.addEventListener('change', function(e){
+              var tier = e.target.value;
+              var info = TIERS[tier];
+              if (!info) return;
+              var total = SUBTOTAL + info.cost;
+              var half = Math.round(total / 2);
+              document.getElementById('shipping-cost').textContent = fmt(info.cost);
+              document.getElementById('total-cost').textContent = fmt(total);
+              document.getElementById('eta-range').textContent = info.eta;
+              document.getElementById('phase1-amt').textContent = fmt(half);
+              document.getElementById('phase2-amt').textContent = fmt(half);
+            });
+          })();
+          </script>
         </div>
       </section>
     </main>

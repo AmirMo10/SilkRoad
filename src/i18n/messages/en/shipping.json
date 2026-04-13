@@ -1,4 +1,9 @@
 {
+  "heading": "Shipping tier",
+  "selectTier": "Choose your shipping method",
+  "etaLabel": "Estimated delivery",
+  "costLabel": "Shipping cost",
+  "businessDays": "business days",
   "tier": {
     "turbo": {
       "name": "Turbo",

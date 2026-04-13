@@ -1,4 +1,9 @@
 {
+  "heading": "روش ارسال",
+  "selectTier": "روش ارسال را انتخاب کنید",
+  "etaLabel": "زمان تحویل تقریبی",
+  "costLabel": "هزینه ارسال",
+  "businessDays": "روز کاری",
   "tier": {
     "turbo": {
       "name": "اکسپرس",
