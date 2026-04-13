@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "Order Details",
+    "subtitle": "Payment status and shipment tracking"
+  },
+  "orderNumber": "Order number",
+  "paymentProgress": "Payment progress",
+  "status": {
+    "pending": "Pending payment",
+    "upfrontPaid": "Upfront paid",
+    "shipped": "Shipped from China",
+    "arrivedInIran": "Arrived in Iran",
+    "remainingPaid": "Fully paid",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "refundPending": "Refund pending"
+  },
+  "statusDesc": {
+    "pending": "Order placed, awaiting upfront payment",
+    "upfrontPaid": "Upfront payment received, order confirmed",
+    "shipped": "Goods shipped from China",
+    "arrivedInIran": "Goods arrived in Iran, remaining payment required",
+    "remainingPaid": "Full payment received",
+    "delivered": "Order delivered"
+  },
+  "phase1": {
+    "title": "Phase 1 — Upfront",
+    "description": "Paid when placing the order"
+  },
+  "phase2": {
+    "title": "Phase 2 — Remaining",
+    "description": "Paid when goods arrive in Iran"
+  },
+  "paid": "Paid",
+  "unpaid": "Unpaid",
+  "payNow": "Pay now",
+  "ofTotal": "of total",
+  "remainingCta": "Your goods have arrived in Iran. Pay the remaining balance to complete delivery.",
+  "payRemaining": "Pay remaining balance",
+  "orderSummary": "Order summary",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "total": "Total",
+  "shippingTier": "Shipping tier",
+  "estimatedDelivery": "Estimated delivery",
+  "items": "Order items",
+  "quantity": "Qty",
+  "unitPrice": "Unit price",
+  "backToOrders": "Back to orders"
+}

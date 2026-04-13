@@ -134,18 +134,33 @@
 
               <section>
                 <h2 class="section-heading">Split payment</h2>
-                <div class="phase-grid">
-                  <div class="card phase-card">
-                    <span class="badge"><svg class="icon icon-xs"><use href="#i-coin" /></svg> Phase 1</span>
-                    <div class="desc">Paid now to confirm your wholesale order.</div>
-                    <div class="amt" id="phase1-amt">207,400,000 Toman</div>
-                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
+                <div class="phase-summary">
+                  <!-- Phase 1 — pay now -->
+                  <div class="phase-summary-card active">
+                    <div class="accent-bar"></div>
+                    <div class="phase-head">
+                      <div style="display:flex;align-items:center">
+                        <div class="icon-wrap"><svg class="icon" style="width:16px;height:16px;color:var(--sr-gold-400)"><use href="#i-coin" /></svg></div>
+                        <span class="name">Upfront Payment</span>
+                      </div>
+                      <span class="status-pill pill-awaiting">Pay now</span>
+                    </div>
+                    <div class="pct-label">50% of total</div>
+                    <div class="big-amt" id="phase1-amt">207,400,000 Toman</div>
+                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.35rem">Paid now to confirm your wholesale order.</div>
                   </div>
-                  <div class="card phase-card">
-                    <span class="badge"><svg class="icon icon-xs"><use href="#i-truck" /></svg> Phase 2</span>
-                    <div class="desc">Paid once the shipment arrives in Iran, before final delivery.</div>
-                    <div class="amt" id="phase2-amt">207,400,000 Toman</div>
-                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.25rem">50% of total</div>
+                  <!-- Phase 2 — pay on arrival -->
+                  <div class="phase-summary-card">
+                    <div class="phase-head">
+                      <div style="display:flex;align-items:center">
+                        <div class="icon-wrap" style="background:var(--sr-glass)"><svg class="icon" style="width:16px;height:16px;color:var(--sr-fg-muted)"><use href="#i-truck" /></svg></div>
+                        <span class="name">Remaining Payment</span>
+                      </div>
+                      <span class="status-pill pill-unpaid">On arrival</span>
+                    </div>
+                    <div class="pct-label">50% of total</div>
+                    <div class="big-amt" style="color: var(--sr-fg)" id="phase2-amt">207,400,000 Toman</div>
+                    <div style="font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.35rem">Paid once the shipment arrives in Iran, before final delivery.</div>
                   </div>
                 </div>
               </section>
@@ -168,6 +183,20 @@
               <div class="summary-row" style="font-size: 0.75rem">
                 <span class="muted">Estimated delivery</span>
                 <span id="eta-range">20–35 days</span>
+              </div>
+
+              <div style="border-top: 1px solid var(--sr-glass-border); padding-top: 0.75rem">
+                <div class="split-inline">
+                  <div class="title">Split Payment</div>
+                  <div class="phase">
+                    <div><div class="name">Phase 1</div><div class="sub">Pay now</div></div>
+                    <div><div class="amt" id="sidebar-phase1">207,400,000 Toman</div><div class="pct">50%</div></div>
+                  </div>
+                  <div class="phase">
+                    <div><div class="name">Phase 2</div><div class="sub">On arrival</div></div>
+                    <div><div class="amt" id="sidebar-phase2">207,400,000 Toman</div><div class="pct">50%</div></div>
+                  </div>
+                </div>
               </div>
 
               <button type="button" class="btn btn-primary btn-xl btn-block">
@@ -203,6 +232,8 @@
               document.getElementById('eta-range').textContent = info.eta;
               document.getElementById('phase1-amt').textContent = fmt(half);
               document.getElementById('phase2-amt').textContent = fmt(half);
+              document.getElementById('sidebar-phase1').textContent = fmt(half);
+              document.getElementById('sidebar-phase2').textContent = fmt(half);
             });
           })();
           </script>

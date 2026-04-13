@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>جزئیات سفارش — راه ابریشم</title>
+    <meta name="description" content="جزئیات سفارش و پیگیری پرداخت مرحله‌ای — راه ابریشم" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12c3-6 6-6 9 0s6 6 9 0'/%3E%3Ccircle cx='3' cy='12' r='1.5' fill='%23d4af37'/%3E%3Ccircle cx='21' cy='12' r='1.5' fill='%23d4af37'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-logo" viewBox="0 0 24 24">
+          <path d="M3 12c3-6 6-6 9 0s6 6 9 0" />
+          <circle cx="3" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          <circle cx="21" cy="12" r="1.6" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v10" />
+          <path d="M15 9.5c0-1.1-1.34-2-3-2s-3 .9-3 2 1.5 1.8 3 2 3 .9 3 2-1.34 2-3 2-3-.9-3-2" />
+        </symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24">
+          <rect x="1" y="6" width="14" height="11" rx="1" />
+          <path d="M15 10h4l3 3v4h-7z" />
+          <circle cx="6" cy="19" r="2" />
+          <circle cx="18" cy="19" r="2" />
+        </symbol>
+        <symbol id="i-package" viewBox="0 0 24 24">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12" />
+        </symbol>
+        <symbol id="i-loader" viewBox="0 0 24 24">
+          <line x1="12" y1="2" x2="12" y2="6" />
+          <line x1="12" y1="18" x2="12" y2="22" />
+          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
+          <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
+          <line x1="2" y1="12" x2="6" y2="12" />
+          <line x1="18" y1="12" x2="22" y2="12" />
+        </symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24">
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="preview-note">
+      پیش‌نمایش استاتیک — جریان واقعی با tRPC و درگاه پرداخت در Next.js موجود است
+    </div>
+
+    <header class="site">
+      <div class="container bar">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+          <span class="brand-name">راه ابریشم</span>
+        </a>
+        <nav class="main">
+          <a href="products.html">محصولات</a>
+          <a href="index.html#shipping">روش‌های ارسال</a>
+          <a href="index.html#split">پرداخت مرحله‌ای</a>
+          <a href="index.html#about">درباره ما</a>
+        </nav>
+        <div class="header-cta">
+          <a href="cart.html" class="cart-link" title="سبد خرید"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="badge-count">۲</span></a>
+          <div class="locale-toggle">
+            <a href="order.html" class="active">FA</a>
+            <a href="order.en.html">EN</a>
+          </div>
+          <a href="admin.html" class="btn btn-secondary btn-sm">پنل مدیریت</a>
+          <a href="login.html" class="btn btn-primary btn-sm">ورود/ثبت‌نام</a>
+          <button class="hamburger" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.add('open');d.style.transform='translateX(0)';b.classList.add('open')" aria-label="منو"><svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        </div>
+      </div>
+    </header>
+    <div id="backdrop" class="mobile-backdrop" onclick="var d=document.getElementById('drawer');d.classList.remove('open');d.style.transform='';this.classList.remove('open')"></div>
+    <aside id="drawer" class="mobile-drawer"><div class="drawer-head"><span class="brand-name" style="background:linear-gradient(to left,var(--sr-gold-300),var(--sr-gold-400),var(--sr-gold-500));-webkit-background-clip:text;background-clip:text;color:transparent">راه ابریشم</span><button class="drawer-close" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.remove('open');d.style.transform='';b.classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><nav><a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> خانه</a><a href="products.html"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8V21H3V8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="12" x2="14" y2="12"/></svg> محصولات</a><a href="cart.html"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> سبد خرید</a><a href="admin.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> پنل مدیریت</a></nav><div class="drawer-footer"><a href="login.html" class="btn btn-primary" style="width:100%;text-align:center;text-decoration:none">ورود/ثبت‌نام</a></div></aside>
+
+    <main>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol class="container">
+          <li><a href="index.html">خانه</a></li>
+          <li class="sep">/</li>
+          <li><a href="#">سفارش‌ها</a></li>
+          <li class="sep">/</li>
+          <li class="current">جزئیات سفارش</li>
+        </ol>
+      </nav>
+
+      <section style="padding: 2.5rem 0 5rem">
+        <div class="container">
+
+          <!-- Order header -->
+          <div class="order-header">
+            <div>
+              <h1>جزئیات سفارش</h1>
+              <p style="color: var(--sr-fg-muted); margin-top: 0.35rem; font-size: 0.9rem">وضعیت پرداخت و ارسال سفارش شما</p>
+            </div>
+            <div class="order-number">
+              شماره سفارش: <code>SR-۱۴۰۵-۰۰۴۲</code>
+            </div>
+          </div>
+
+          <!-- ═══ Payment progress timeline ═══ -->
+          <div class="card" style="padding: 1.75rem; margin-bottom: 2rem">
+            <h3 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 1.25rem">پیشرفت پرداخت</h3>
+
+            <!-- Desktop horizontal -->
+            <div class="progress-track" id="progress-desktop" style="display: none">
+              <div class="progress-fill" id="progress-fill"></div>
+
+              <div class="progress-step done" data-step="0">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-check" /></svg></div>
+                <span class="label">در انتظار پرداخت</span>
+              </div>
+              <div class="progress-step done" data-step="1">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-check" /></svg></div>
+                <span class="label">پیش‌پرداخت انجام شد</span>
+              </div>
+              <div class="progress-step done" data-step="2">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-check" /></svg></div>
+                <span class="label">ارسال از چین</span>
+              </div>
+              <div class="progress-step current" data-step="3">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-shield" /></svg></div>
+                <span class="label">رسیدن به ایران</span>
+              </div>
+              <div class="progress-step future" data-step="4">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-coin" /></svg></div>
+                <span class="label">تسویه کامل</span>
+              </div>
+              <div class="progress-step future" data-step="5">
+                <div class="progress-node"><svg class="icon" style="width:16px;height:16px"><use href="#i-truck" /></svg></div>
+                <span class="label">تحویل داده شد</span>
+              </div>
+            </div>
+
+            <!-- Mobile vertical -->
+            <div class="progress-vert" id="progress-mobile">
+              <div class="progress-vert-item done">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-check" /></svg></div>
+                  <div class="vert-tail"></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">در انتظار پرداخت</div>
+                  <div class="desc">سفارش ثبت شده، در انتظار پیش‌پرداخت</div>
+                </div>
+              </div>
+              <div class="progress-vert-item done">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-check" /></svg></div>
+                  <div class="vert-tail"></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">پیش‌پرداخت انجام شد</div>
+                  <div class="desc">پیش‌پرداخت دریافت شد، سفارش تأیید شد</div>
+                </div>
+              </div>
+              <div class="progress-vert-item done">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-check" /></svg></div>
+                  <div class="vert-tail"></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">ارسال از چین</div>
+                  <div class="desc">کالا از چین ارسال شد</div>
+                </div>
+              </div>
+              <div class="progress-vert-item current">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-shield" /></svg></div>
+                  <div class="vert-tail"></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">رسیدن به ایران</div>
+                  <div class="desc">کالا به ایران رسید، پرداخت باقی‌مانده لازم است</div>
+                </div>
+              </div>
+              <div class="progress-vert-item future">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-coin" /></svg></div>
+                  <div class="vert-tail"></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">تسویه کامل</div>
+                  <div class="desc">پرداخت کامل دریافت شد</div>
+                </div>
+              </div>
+              <div class="progress-vert-item future">
+                <div class="vert-line">
+                  <div class="vert-node"><svg class="icon" style="width:14px;height:14px"><use href="#i-truck" /></svg></div>
+                </div>
+                <div class="vert-text">
+                  <div class="label">تحویل داده شد</div>
+                  <div class="desc">کالا تحویل داده شد</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ Two-phase payment summary ═══ -->
+          <div class="phase-summary" style="margin-bottom: 2rem">
+            <!-- Phase 1 -->
+            <div class="phase-summary-card active">
+              <div class="accent-bar"></div>
+              <div class="phase-head">
+                <div style="display:flex;align-items:center">
+                  <div class="icon-wrap"><svg class="icon" style="width:16px;height:16px;color:var(--sr-gold-400)"><use href="#i-coin" /></svg></div>
+                  <span class="name">مرحله ۱ — پیش‌پرداخت</span>
+                </div>
+                <span class="status-pill pill-paid">پرداخت شده</span>
+              </div>
+              <div class="pct-label">۵۰٪ از کل مبلغ</div>
+              <div class="big-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+            </div>
+            <!-- Phase 2 -->
+            <div class="phase-summary-card awaiting">
+              <div class="phase-head">
+                <div style="display:flex;align-items:center">
+                  <div class="icon-wrap"><svg class="icon" style="width:16px;height:16px;color:#fbbf24"><use href="#i-truck" /></svg></div>
+                  <span class="name">مرحله ۲ — تسویه نهایی</span>
+                </div>
+                <span class="status-pill pill-awaiting">پرداخت کنید</span>
+              </div>
+              <div class="pct-label">۵۰٪ از کل مبلغ</div>
+              <div class="big-amt">۲۰۷,۴۰۰,۰۰۰ تومان</div>
+            </div>
+          </div>
+
+          <!-- ═══ CTA: pay remaining ═══ -->
+          <div class="cta-banner" style="margin-bottom: 2rem">
+            <p>کالای شما به ایران رسیده است. برای تحویل نهایی، مبلغ باقی‌مانده را پرداخت کنید.</p>
+            <button type="button" class="btn-gold">
+              پرداخت باقی‌مانده
+              <svg class="icon" style="width:18px;height:18px"><use href="#i-arrow-left" /></svg>
+            </button>
+          </div>
+
+          <div class="checkout-layout">
+            <div>
+              <!-- ═══ Order items ═══ -->
+              <section style="margin-bottom: 2rem">
+                <h2 class="section-heading">اقلام سفارش</h2>
+                <div class="order-items">
+                  <div class="order-item">
+                    <div class="thumb"><svg class="icon" style="width:24px;height:24px"><use href="#i-package" /></svg></div>
+                    <div class="item-info">
+                      <div class="name">هدفون بلوتوثی مدل Pro Max</div>
+                      <div class="meta">تعداد: ۱,۰۰۰ عدد × ۳۸۵,۰۰۰ تومان</div>
+                    </div>
+                    <div class="item-amt">۳۸۵,۰۰۰,۰۰۰ تومان</div>
+                  </div>
+                  <div class="order-item">
+                    <div class="thumb"><svg class="icon" style="width:24px;height:24px"><use href="#i-package" /></svg></div>
+                    <div class="item-info">
+                      <div class="name">ساعت هوشمند Ultra Series</div>
+                      <div class="meta">تعداد: ۵۰۰ عدد × ۲۰,۰۰۰ تومان</div>
+                    </div>
+                    <div class="item-amt">۱۰,۰۰۰,۰۰۰ تومان</div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- ═══ Order summary sidebar ═══ -->
+            <aside class="card summary-card">
+              <h3>خلاصه سفارش</h3>
+              <div class="summary-row">
+                <span class="muted">جمع محصولات</span>
+                <span>۳۹۵,۰۰۰,۰۰۰ تومان</span>
+              </div>
+              <div class="summary-row">
+                <span class="muted">هزینه ارسال</span>
+                <span>۱۹,۸۰۰,۰۰۰ تومان</span>
+              </div>
+              <div class="summary-row total">
+                <span>جمع کل</span>
+                <span class="num">۴۱۴,۸۰۰,۰۰۰ تومان</span>
+              </div>
+              <div class="summary-row" style="font-size: 0.75rem">
+                <span class="muted">روش ارسال</span>
+                <span>عادی (۲۰–۳۵ روز)</span>
+              </div>
+              <div style="border-top: 1px solid var(--sr-glass-border); padding-top: 0.75rem; margin-top: 0.25rem">
+                <div class="split-inline">
+                  <div class="title">پرداخت مرحله‌ای</div>
+                  <div class="phase">
+                    <div><div class="name">مرحله ۱</div><div class="sub">پیش‌پرداخت</div></div>
+                    <div><div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div><div class="pct">۵۰٪ — پرداخت شده ✓</div></div>
+                  </div>
+                  <div class="phase">
+                    <div><div class="name">مرحله ۲</div><div class="sub">تسویه نهایی</div></div>
+                    <div><div class="amt">۲۰۷,۴۰۰,۰۰۰ تومان</div><div class="pct" style="color: #fbbf24">۵۰٪ — در انتظار پرداخت</div></div>
+                  </div>
+                </div>
+              </div>
+              <a href="#" style="display: block; text-align: center; font-size: 0.75rem; color: var(--sr-fg-muted); text-decoration: none; margin-top: 0.5rem">
+                → بازگشت به سفارش‌ها
+              </a>
+            </aside>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div class="brand" style="margin-bottom: 0.75rem">
+              <div class="brand-mark"><svg class="icon"><use href="#i-logo" /></svg></div>
+              <span class="brand-name">راه ابریشم</span>
+            </div>
+            <p>بازار عمده‌فروشی B2B چین به ایران. واردات مطمئن، پرداخت مرحله‌ای و سه روش ارسال.</p>
+          </div>
+          <div>
+            <h4>لینک‌های سریع</h4>
+            <ul>
+              <li><a href="products.html">محصولات</a></li>
+              <li><a href="index.html#shipping">روش‌های ارسال</a></li>
+              <li><a href="index.html#split">پرداخت مرحله‌ای</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>تماس</h4>
+            <ul>
+              <li>info@silkroad.ir</li>
+              <li>۰۲۱ — در دست ساخت</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">© ۱۴۰۵ راه ابریشم — تمام حقوق محفوظ است</div>
+      </div>
+    </footer>
+
+    <script>
+    (function(){
+      // Responsive: show horizontal on desktop, vertical on mobile
+      function layout() {
+        var w = window.innerWidth;
+        var d = document.getElementById('progress-desktop');
+        var m = document.getElementById('progress-mobile');
+        if (w >= 640) { d.style.display = 'flex'; m.style.display = 'none'; }
+        else { d.style.display = 'none'; m.style.display = 'flex'; }
+      }
+      layout();
+      window.addEventListener('resize', layout);
+
+      // Animate progress fill (3 out of 5 steps = 60%)
+      var fill = document.getElementById('progress-fill');
+      if (fill) {
+        requestAnimationFrame(function(){
+          fill.style.width = '60%';
+        });
+      }
+    })();
+    </script>
+  </body>
+</html>
