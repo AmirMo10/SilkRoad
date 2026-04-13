@@ -138,7 +138,8 @@ nav.main a.active { color: var(--sr-gold-300); }
 }
 html[dir="rtl"] .mobile-drawer { right: 0; transform: translateX(100%); }
 html[dir="ltr"] .mobile-drawer { left: 0; transform: translateX(-100%); }
-.mobile-drawer.open { transform: translateX(0); }
+html[dir="rtl"] .mobile-drawer.open,
+html[dir="ltr"] .mobile-drawer.open { transform: translateX(0); }
 .mobile-drawer .drawer-head {
   display: flex; align-items: center; justify-content: space-between;
   height: 64px; padding: 0 1.25rem;
