@@ -90,17 +90,17 @@
           </div>
           <a href="admin.html" class="btn btn-secondary btn-sm">پنل مدیریت</a>
           <a href="login.html" class="btn btn-primary btn-sm">ورود/ثبت‌نام</a>
-          <button class="hamburger" onclick="document.getElementById('drawer').classList.add('open');document.getElementById('backdrop').classList.add('open')" aria-label="منو">
+          <button class="hamburger" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.add('open');d.style.transform='translateX(0)';b.classList.add('open')" aria-label="منو">
             <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
       </div>
     </header>
-    <div id="backdrop" class="mobile-backdrop" onclick="this.classList.remove('open');document.getElementById('drawer').classList.remove('open')"></div>
+    <div id="backdrop" class="mobile-backdrop" onclick="var d=document.getElementById('drawer');d.classList.remove('open');d.style.transform='';this.classList.remove('open')"></div>
     <aside id="drawer" class="mobile-drawer">
       <div class="drawer-head">
         <span class="brand-name" style="background:linear-gradient(to left,var(--sr-gold-300),var(--sr-gold-400),var(--sr-gold-500));-webkit-background-clip:text;background-clip:text;color:transparent">راه ابریشم</span>
-        <button class="drawer-close" onclick="document.getElementById('drawer').classList.remove('open');document.getElementById('backdrop').classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <button class="drawer-close" onclick="var d=document.getElementById('drawer'),b=document.getElementById('backdrop');d.classList.remove('open');d.style.transform='';b.classList.remove('open')"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <nav>
         <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> خانه</a>
