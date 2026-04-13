@@ -815,6 +815,109 @@ footer.site .legal {
 .stat-card .stat-icon .icon { width: 22px; height: 22px; }
 .stat-card .stat-label { font-size: 0.85rem; color: var(--sr-fg-muted); }
 .stat-card .stat-value { font-size: 1.5rem; font-weight: 800; color: var(--sr-gold-400); margin-top: 0.25rem; }
+.stat-card .stat-trend {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  font-size: 0.7rem; font-weight: 700; margin-top: 0.35rem;
+  padding: 0.15rem 0.5rem; border-radius: 99px;
+}
+.stat-card .stat-trend.up { background: rgba(52, 211, 153, 0.12); color: #6ee7b7; }
+.stat-card .stat-trend.down { background: rgba(248, 113, 113, 0.12); color: #fca5a5; }
+.stat-card .stat-trend .arrow { font-size: 0.65rem; }
+.stat-card .stat-sub { font-size: 0.7rem; color: var(--sr-fg-muted); margin-top: 0.2rem; }
+
+/* Mini sparkline in stat card */
+.stat-card .mini-chart {
+  display: flex; align-items: flex-end; gap: 2px; height: 28px; margin-top: 0.5rem;
+}
+.stat-card .mini-chart .bar {
+  flex: 1; border-radius: 2px; min-width: 4px;
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.4));
+  transition: height 0.6s ease;
+}
+
+/* ─── Revenue chart (CSS bar chart) ─── */
+.chart-section { margin-bottom: 2rem; }
+.chart-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.chart-header h2 { font-size: 1.1rem; font-weight: 800; }
+.chart-legend { display: flex; gap: 1rem; font-size: 0.7rem; color: var(--sr-fg-muted); }
+.chart-legend .dot {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  margin-inline-end: 0.3rem; vertical-align: middle;
+}
+.chart-legend .dot-gold { background: var(--sr-gold-400); }
+.chart-legend .dot-muted { background: rgba(255, 255, 255, 0.15); }
+
+.bar-chart {
+  background: var(--sr-glass); border: 1px solid var(--sr-glass-border);
+  border-radius: var(--sr-radius-lg); padding: 1.5rem;
+}
+.bar-chart-inner {
+  display: flex; align-items: flex-end; gap: 0; height: 180px;
+  border-bottom: 1px solid var(--sr-glass-border);
+  padding-bottom: 0.5rem;
+}
+.bar-group {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  position: relative;
+}
+.bar-group .bars {
+  display: flex; gap: 3px; align-items: flex-end; height: 160px;
+}
+.bar-group .b {
+  width: 14px; border-radius: 3px 3px 0 0;
+  transition: height 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@media (max-width: 640px) { .bar-group .b { width: 8px; } }
+.bar-group .b.gold {
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.3), var(--sr-gold-400));
+}
+.bar-group .b.muted {
+  background: rgba(255, 255, 255, 0.08);
+}
+.bar-group .month-label {
+  font-size: 0.6rem; color: var(--sr-fg-muted); text-align: center;
+  white-space: nowrap;
+}
+.bar-group:hover .b.gold { filter: brightness(1.2); }
+.bar-group .tooltip {
+  display: none; position: absolute; bottom: 100%; margin-bottom: 0.5rem;
+  background: var(--sr-navy-700); border: 1px solid var(--sr-glass-border);
+  border-radius: 0.5rem; padding: 0.4rem 0.6rem;
+  font-size: 0.65rem; font-weight: 700; color: var(--sr-gold-300);
+  white-space: nowrap; z-index: 10; pointer-events: none;
+}
+.bar-group:hover .tooltip { display: block; }
+
+/* Y-axis labels */
+.bar-chart-y {
+  display: flex; flex-direction: column; justify-content: space-between;
+  height: 160px; padding-inline-end: 0.5rem;
+  font-size: 0.6rem; color: var(--sr-fg-muted); text-align: end;
+  flex-shrink: 0; width: 3.5rem;
+}
+.bar-chart-wrap { display: flex; }
+
+/* ─── Quick stats row (between stat cards and chart) ─── */
+.quick-stats {
+  display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;
+}
+.quick-stat {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--sr-glass); border: 1px solid var(--sr-glass-border);
+  border-radius: var(--sr-radius); padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+}
+.quick-stat .qs-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.quick-stat .qs-val { font-weight: 800; color: var(--sr-gold-400); }
+
+/* ─── Table row filter animation ─── */
+.admin-table tbody tr { transition: opacity 0.25s ease, transform 0.25s ease; }
+.admin-table tbody tr.hidden-row { opacity: 0; height: 0; overflow: hidden; display: none; }
 
 /* Admin table */
 .admin-table-wrap {

@@ -278,5 +278,60 @@
         </div>
       </main>
     </div>
+
+    <script>
+    (function(){
+      // Interactive filter pills — filter table rows by status badge text
+      var pills = document.querySelectorAll('.filter-pills button');
+      var rows = document.querySelectorAll('.admin-table tbody tr');
+      var countEl = document.querySelector('.table-count');
+      var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+      function toFa(n){ return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; }); }
+
+      pills.forEach(function(pill){
+        pill.addEventListener('click', function(){
+          // Toggle active
+          pills.forEach(function(p){ p.classList.remove('active'); });
+          pill.classList.add('active');
+
+          var filter = pill.textContent.trim();
+          var isAll = pill === pills[0]; // First pill is "All"
+          var visible = 0;
+
+          rows.forEach(function(row){
+            var badge = row.querySelector('.badge');
+            if (!badge) return;
+            var status = badge.textContent.trim();
+            if (isAll || status === filter) {
+              row.classList.remove('hidden-row');
+              row.style.display = '';
+              visible++;
+            } else {
+              row.classList.add('hidden-row');
+              row.style.display = 'none';
+            }
+          });
+
+          if (countEl) countEl.textContent = toFa(visible) + ' سفارش';
+        });
+      });
+
+      // Quick action: clicking view button shows alert with order ID
+      document.querySelectorAll('.admin-table .actions button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var row = btn.closest('tr');
+          var orderId = row.querySelector('.mono').textContent;
+          var isView = btn.getAttribute('title') === 'مشاهده جزئیات';
+          if (isView) {
+            // In real app, navigate to order detail
+            alert('نمایش جزئیات سفارش ' + orderId);
+          } else {
+            // In real app, open status dropdown
+            alert('تغییر وضعیت سفارش ' + orderId);
+          }
+        });
+      });
+    })();
+    </script>
   </body>
 </html>

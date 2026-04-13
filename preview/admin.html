@@ -86,28 +86,127 @@
               <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5C14.5 8 13.3 7 12 7c-2 0-3 1.2-3 2.5 0 2.8 6 1.5 6 4.5 0 1.5-1.2 2.5-3 2.5-1.5 0-2.7-.8-3.3-2"/></svg>
             </div>
             <div class="stat-label">درآمد کل</div>
-            <div class="stat-value">۲,۴۸۰,۰۰۰,۰۰۰ تومان</div>
+            <div class="stat-value" data-target="2480000000" data-suffix=" تومان" data-fa="1">۲,۴۸۰,۰۰۰,۰۰۰ تومان</div>
+            <span class="stat-trend up"><span class="arrow">&#9650;</span> ۱۸٪ نسبت به ماه قبل</span>
+            <div class="mini-chart" data-bars="40,65,50,80,60,90,75,95,85,70,88,100"></div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">
               <svg class="icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
             </div>
             <div class="stat-label">سفارش‌های فعال</div>
-            <div class="stat-value">۴۷</div>
+            <div class="stat-value" data-target="47" data-fa="1">۴۷</div>
+            <span class="stat-trend up"><span class="arrow">&#9650;</span> ۱۲٪</span>
+            <div class="stat-sub">۵ سفارش در انتظار پرداخت</div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">
               <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <div class="stat-label">محموله‌های در انتظار</div>
-            <div class="stat-value">۱۲</div>
+            <div class="stat-value" data-target="12" data-fa="1">۱۲</div>
+            <span class="stat-trend down"><span class="arrow">&#9660;</span> ۳ کمتر از هفته قبل</span>
           </div>
           <div class="stat-card">
             <div class="stat-icon">
               <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="stat-label">کاربران ثبت‌نام‌شده</div>
-            <div class="stat-value">۱۸۳</div>
+            <div class="stat-value" data-target="183" data-fa="1">۱۸۳</div>
+            <span class="stat-trend up"><span class="arrow">&#9650;</span> ۲۴ کاربر جدید</span>
+          </div>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="quick-stats">
+          <div class="quick-stat"><span class="qs-dot" style="background:#6ee7b7"></span> تکمیل‌شده: <span class="qs-val">۳۲</span></div>
+          <div class="quick-stat"><span class="qs-dot" style="background:#7dd3fc"></span> در مسیر: <span class="qs-val">۸</span></div>
+          <div class="quick-stat"><span class="qs-dot" style="background:#fbbf24"></span> در انتظار پرداخت: <span class="qs-val">۵</span></div>
+          <div class="quick-stat"><span class="qs-dot" style="background:#fca5a5"></span> لغو شده: <span class="qs-val">۲</span></div>
+        </div>
+
+        <!-- Revenue chart -->
+        <div class="chart-section">
+          <div class="chart-header">
+            <h2>نمودار درآمد ماهانه</h2>
+            <div class="chart-legend">
+              <span><span class="dot dot-gold"></span>امسال</span>
+              <span><span class="dot dot-muted"></span>سال قبل</span>
+            </div>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-chart-wrap">
+              <div class="bar-chart-y">
+                <span>۲.۵B</span>
+                <span>۲B</span>
+                <span>۱.۵B</span>
+                <span>۱B</span>
+                <span>۰.۵B</span>
+                <span>۰</span>
+              </div>
+              <div class="bar-chart-inner" id="revenue-chart">
+                <div class="bar-group" data-val="۱.۲B">
+                  <div class="tooltip">فروردین: ۱,۲۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="35%"></div><div class="b gold" style="height:0" data-h="48%"></div></div>
+                  <span class="month-label">فرو</span>
+                </div>
+                <div class="bar-group" data-val="۱.۸B">
+                  <div class="tooltip">اردیبهشت: ۱,۸۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="42%"></div><div class="b gold" style="height:0" data-h="72%"></div></div>
+                  <span class="month-label">ارد</span>
+                </div>
+                <div class="bar-group" data-val="۱.۵B">
+                  <div class="tooltip">خرداد: ۱,۵۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="50%"></div><div class="b gold" style="height:0" data-h="60%"></div></div>
+                  <span class="month-label">خرد</span>
+                </div>
+                <div class="bar-group" data-val="۲.۱B">
+                  <div class="tooltip">تیر: ۲,۱۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="55%"></div><div class="b gold" style="height:0" data-h="84%"></div></div>
+                  <span class="month-label">تیر</span>
+                </div>
+                <div class="bar-group" data-val="۱.۹B">
+                  <div class="tooltip">مرداد: ۱,۹۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="48%"></div><div class="b gold" style="height:0" data-h="76%"></div></div>
+                  <span class="month-label">مرد</span>
+                </div>
+                <div class="bar-group" data-val="۲.۳B">
+                  <div class="tooltip">شهریور: ۲,۳۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="52%"></div><div class="b gold" style="height:0" data-h="92%"></div></div>
+                  <span class="month-label">شهر</span>
+                </div>
+                <div class="bar-group" data-val="۱.۷B">
+                  <div class="tooltip">مهر: ۱,۷۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="60%"></div><div class="b gold" style="height:0" data-h="68%"></div></div>
+                  <span class="month-label">مهر</span>
+                </div>
+                <div class="bar-group" data-val="۲.۰B">
+                  <div class="tooltip">آبان: ۲,۰۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="58%"></div><div class="b gold" style="height:0" data-h="80%"></div></div>
+                  <span class="month-label">آبان</span>
+                </div>
+                <div class="bar-group" data-val="۲.۲B">
+                  <div class="tooltip">آذر: ۲,۲۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="62%"></div><div class="b gold" style="height:0" data-h="88%"></div></div>
+                  <span class="month-label">آذر</span>
+                </div>
+                <div class="bar-group" data-val="۱.۶B">
+                  <div class="tooltip">دی: ۱,۶۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="45%"></div><div class="b gold" style="height:0" data-h="64%"></div></div>
+                  <span class="month-label">دی</span>
+                </div>
+                <div class="bar-group" data-val="۲.۰B">
+                  <div class="tooltip">بهمن: ۲,۰۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="50%"></div><div class="b gold" style="height:0" data-h="80%"></div></div>
+                  <span class="month-label">بهم</span>
+                </div>
+                <div class="bar-group" data-val="۲.۵B">
+                  <div class="tooltip">اسفند: ۲,۵۰۰,۰۰۰,۰۰۰ تومان</div>
+                  <div class="bars"><div class="b muted" style="height:0" data-h="55%"></div><div class="b gold" style="height:0" data-h="100%"></div></div>
+                  <span class="month-label">اسف</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -175,5 +274,52 @@
         </div>
       </main>
     </div>
+
+    <script>
+    (function(){
+      var PD = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+      function toFa(n){ return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; }); }
+
+      // Animate bar chart
+      setTimeout(function(){
+        var bars = document.querySelectorAll('.bar-chart .b[data-h]');
+        bars.forEach(function(b){ b.style.height = b.getAttribute('data-h'); });
+      }, 200);
+
+      // Animate mini sparkline charts
+      document.querySelectorAll('.mini-chart[data-bars]').forEach(function(chart){
+        var vals = chart.getAttribute('data-bars').split(',').map(Number);
+        vals.forEach(function(v){
+          var bar = document.createElement('div');
+          bar.className = 'bar';
+          bar.style.height = '0';
+          chart.appendChild(bar);
+          setTimeout(function(){ bar.style.height = v + '%'; }, 300);
+        });
+      });
+
+      // Animated counter
+      document.querySelectorAll('.stat-value[data-target]').forEach(function(el){
+        var target = parseInt(el.getAttribute('data-target'));
+        var suffix = el.getAttribute('data-suffix') || '';
+        var isFa = el.getAttribute('data-fa') === '1';
+        var duration = 1200;
+        var start = 0;
+        var startTime = null;
+
+        function step(ts){
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          // Ease out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(start + (target - start) * eased);
+          var formatted = current.toLocaleString('en-US');
+          el.textContent = (isFa ? toFa(formatted) : formatted) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        setTimeout(function(){ requestAnimationFrame(step); }, 400);
+      });
+    })();
+    </script>
   </body>
 </html>

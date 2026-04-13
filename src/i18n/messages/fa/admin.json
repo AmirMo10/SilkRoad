@@ -11,13 +11,24 @@
   "dashboard": {
     "title": "داشبورد مدیریت",
     "subtitle": "نمای کلی عملکرد پلتفرم",
-    "totalRevenue": "د��آمد کل",
+    "totalRevenue": "درآمد کل",
     "activeOrders": "سفارش‌های فعال",
     "pendingShipments": "محموله‌های در انتظار",
     "registeredUsers": "کاربران ثبت‌نام‌شده",
     "recentOrders": "سفارش‌های اخیر",
     "topProducts": "محصولات پرفروش",
-    "noData": "هنوز داده‌ای موجود نیست"
+    "noData": "هنوز داده‌ای موجود نیست",
+    "monthlyRevenue": "نمودار درآمد ماهانه",
+    "thisYear": "امسال",
+    "lastYear": "سال قبل",
+    "vsLastMonth": "نسبت به ماه قبل",
+    "fewerThanLastWeek": "کمتر از هفته قبل",
+    "newUsers": "کاربر جدید",
+    "ordersAwaitingPayment": "سفارش در انتظار پرداخت",
+    "completed": "تکمیل‌شده",
+    "inTransit": "در مسیر",
+    "awaitingPayment": "در انتظار پرداخت",
+    "cancelled": "لغو شده"
   },
   "products": {
     "title": "مدیریت محصولات",
@@ -43,7 +54,7 @@
   },
   "orders": {
     "title": "مدیریت سفارش‌ها",
-    "subtitle": "پی��یری و مدیریت سفارش‌های خریداران عمده",
+    "subtitle": "پیگیری و مدیریت سفارش‌های خریداران عمده",
     "orderId": "شماره سفارش",
     "customer": "خریدار",
     "total": "مبلغ کل",
