@@ -8,6 +8,7 @@
   --sr-gold-400: #e6c25a;
   --sr-gold-300: #f0d77f;
   --sr-sand-100: #f5f1e8;
+  --sr-sand-200: #ebe3d0;
 
   --sr-bg: var(--sr-navy-950);
   --sr-surface: var(--sr-navy-900);
@@ -489,11 +490,15 @@ html[dir="rtl"] .search .icon { left: auto; right: 0.75rem; }
 
 /* Split payment */
 .split { max-width: 60rem; margin: 0 auto; text-align: center; }
-.split .pcts {
+.split .pcts,
+.split .badges {
   display: grid; grid-template-columns: 1fr; gap: 1rem;
   max-width: 36rem; margin: 1.5rem auto 0;
 }
-@media (min-width: 640px) { .split .pcts { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 640px) {
+  .split .pcts,
+  .split .badges { grid-template-columns: repeat(2, 1fr); }
+}
 .split .pct {
   background: var(--sr-glass);
   border: 1px solid var(--sr-glass-border);
@@ -501,10 +506,11 @@ html[dir="rtl"] .search .icon { left: auto; right: 0.75rem; }
   padding: 1.25rem;
 }
 .split .pct .label { font-size: 0.75rem; color: var(--sr-fg-muted); }
-.split .pct .num { font-size: 1.6rem; font-weight: 800; color: var(--sr-gold-400); margin-top: 0.25rem; }
+.split .pct .num { font-size: 1.75rem; font-weight: 800; color: var(--sr-gold-400); margin-top: 0.25rem; }
 .split .pct .pct-sm { font-size: 0.75rem; color: var(--sr-fg-muted); margin-top: 0.25rem; }
 
 /* Footer */
+footer.site ul { list-style: none; }
 footer.site {
   margin-top: 5rem; padding: 3rem 0 2rem;
   border-top: 1px solid var(--sr-glass-border);
@@ -1656,4 +1662,50 @@ html[dir="rtl"] .gallery-badge { left: auto; right: 1rem; }
 /* Checkout button disabled state */
 .btn-block:disabled, .btn-block.disabled {
   opacity: 0.4; pointer-events: none;
+}
+
+/* ============================================================
+   Focus-visible accessibility
+   Gold ring for all interactive elements — keyboard users
+   ============================================================ */
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.gallery-thumb:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.qty-btn:focus-visible,
+.cart-item .qty button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.filter-pills button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.locale-toggle a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.nav-link:focus-visible,
+nav.main a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+}
+.admin-nav-item:focus-visible,
+.admin-sidebar nav a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+}
+.cart-item button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
 }
