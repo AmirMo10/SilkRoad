@@ -1,4 +1,5 @@
 {
+  "panelTitle": "Admin Panel",
   "nav": {
     "dashboard": "Dashboard",
     "products": "Products",

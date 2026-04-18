@@ -18,6 +18,7 @@ const NAV_ITEMS: { key: string; icon: IconName; href: string }[] = [
 
 export function AdminSidebar() {
   const locale = useLocale();
+  const tAdmin = useTranslations("admin");
   const t = useTranslations("admin.nav");
   const pathname = usePathname();
   const base = `/${locale}/admin`;
@@ -27,7 +28,7 @@ export function AdminSidebar() {
       <div className="flex items-center gap-2 border-b border-[var(--sr-glass-border)] px-5 py-4">
         <Icon name="shield" size={20} strokeWidth={1.5} className="text-[var(--sr-gold-400)]" />
         <span className="text-sm font-bold text-[var(--sr-gold-400)]">
-          {locale === "fa" ? "پنل مدیریت" : "Admin Panel"}
+          {tAdmin("panelTitle")}
         </span>
       </div>
 
