@@ -45,6 +45,29 @@
           <path d="M14 11v6" />
           <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
         </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" />
+        </symbol>
+        <symbol id="i-package" viewBox="0 0 24 24">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
+        </symbol>
+        <symbol id="i-wave" viewBox="0 0 24 24">
+          <path d="M2 12c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+          <path d="M2 17c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+          <path d="M2 7c1.5 0 1.5-2 3-2s1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2 1.5 2 3 2 1.5-2 3-2" />
+        </symbol>
+        <symbol id="i-weight" viewBox="0 0 24 24">
+          <circle cx="12" cy="5" r="3" />
+          <path d="M6.5 8a2 2 0 0 0-1.9 1.4l-2.1 7.2A2 2 0 0 0 4.4 19h15.2a2 2 0 0 0 1.9-2.4l-2.1-7.2A2 2 0 0 0 17.5 8z" />
+        </symbol>
+        <symbol id="i-bag-empty" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+          <line x1="10" y1="15" x2="14" y2="15" />
+        </symbol>
       </defs>
     </svg>
 
@@ -100,14 +123,15 @@
           <div class="cart-layout">
             <div>
               <div class="cart-lines" id="cart-lines">
-                <div class="card cart-item" data-id="1" data-price="185000" data-moq="1000" data-step="100">
+                <div class="card cart-item" data-id="1" data-price="185000" data-moq="1000" data-step="100" data-weight="0.250">
                   <div class="thumb"><svg class="icon icon-xl"><use href="#i-headphones" /></svg></div>
                   <div class="info">
                     <h3>هدفون بی‌سیم نسل جدید</h3>
                     <div class="meta">قیمت هر واحد: ۱۸۵,۰۰۰ تومان • حداقل سفارش: ۱,۰۰۰ عدد</div>
+                    <div class="weight-tag"><svg class="icon"><use href="#i-weight" /></svg> <span class="item-weight">۲۵۰ کیلوگرم</span></div>
                   </div>
                   <div class="qty">
-                    <button type="button" class="qty-minus" aria-label="کاهش">−</button>
+                    <button type="button" class="qty-minus" aria-label="کاهش" disabled>−</button>
                     <input type="text" class="qty-input" value="۱,۰۰۰" readonly />
                     <button type="button" class="qty-plus" aria-label="افزایش">+</button>
                   </div>
@@ -118,14 +142,15 @@
                   <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
 
-                <div class="card cart-item" data-id="2" data-price="420000" data-moq="500" data-step="100">
+                <div class="card cart-item" data-id="2" data-price="420000" data-moq="500" data-step="100" data-weight="0.085">
                   <div class="thumb"><svg class="icon icon-xl"><use href="#i-watch" /></svg></div>
                   <div class="info">
                     <h3>ساعت هوشمند ورزشی</h3>
                     <div class="meta">قیمت هر واحد: ۴۲۰,۰۰۰ تومان • حداقل سفارش: ۵۰۰ عدد</div>
+                    <div class="weight-tag"><svg class="icon"><use href="#i-weight" /></svg> <span class="item-weight">۴۲.۵ کیلوگرم</span></div>
                   </div>
                   <div class="qty">
-                    <button type="button" class="qty-minus" aria-label="کاهش">−</button>
+                    <button type="button" class="qty-minus" aria-label="کاهش" disabled>−</button>
                     <input type="text" class="qty-input" value="۵۰۰" readonly />
                     <button type="button" class="qty-plus" aria-label="افزایش">+</button>
                   </div>
@@ -135,6 +160,14 @@
                   </div>
                   <button type="button" class="remove" aria-label="حذف"><svg class="icon icon-sm"><use href="#i-trash" /></svg></button>
                 </div>
+              </div>
+
+              <!-- Empty cart state (hidden by default) -->
+              <div class="cart-empty" id="cart-empty" style="display:none">
+                <div class="empty-icon"><svg class="icon"><use href="#i-bag-empty" /></svg></div>
+                <h2>سبد خرید خالی است</h2>
+                <p>محصولات عمده‌فروشی را مرور کنید و کالای مورد نظر خود را به سبد اضافه کنید.</p>
+                <a href="products.html" class="btn btn-primary btn-xl">مشاهده محصولات</a>
               </div>
 
               <section style="margin-top: 2rem">
@@ -168,8 +201,13 @@
               </section>
             </div>
 
-            <aside class="card summary-card">
+            <aside class="card summary-card" id="summary-card">
               <h3>خلاصه سفارش</h3>
+              <div class="summary-items-count" id="items-count">۲ کالا</div>
+              <div class="summary-weight">
+                <svg class="icon"><use href="#i-weight" /></svg>
+                وزن کل: <span class="weight-val" id="total-weight">۲۹۲.۵ کیلوگرم</span>
+              </div>
               <div class="summary-row">
                 <span class="muted">جمع کالا</span>
                 <span id="subtotal-amt">۳۹۵,۰۰۰,۰۰۰ تومان</span>
@@ -224,12 +262,10 @@
             function toFa(n){ return String(n).replace(/[0-9]/g, function(d){ return PD[+d]; }); }
             function fmt(n){ return toFa(Math.round(n).toLocaleString('en-US')) + ' تومان'; }
             function fmtQty(n){ return toFa(n.toLocaleString('en-US')); }
+            function fmtW(kg){ return toFa(kg % 1 === 0 ? kg.toLocaleString('en-US') : kg.toLocaleString('en-US', {minimumFractionDigits:1, maximumFractionDigits:1})); }
 
-            var TIERS = {
-              turbo:   { cost: 39500000, label: 'اکسپرس' },
-              normal:  { cost: 19800000, label: 'عادی' },
-              economy: { cost: 8275000,  label: 'اقتصادی' }
-            };
+            var SHIP_PER_KG = { turbo: 120000, normal: 70000, economy: 35000 };
+            var TIER_LABELS = { turbo: 'اکسپرس', normal: 'عادی', economy: 'اقتصادی' };
 
             function getSelectedTier(){
               var r = document.querySelector('#cart-tier-picker input:checked');
@@ -237,30 +273,70 @@
             }
 
             function recalc(){
-              var items = document.querySelectorAll('.cart-item');
-              var subtotal = 0;
+              var items = document.querySelectorAll('.cart-item:not(.removing)');
+              var subtotal = 0, totalWeight = 0, itemCount = items.length;
+
               items.forEach(function(el){
                 var price = +el.dataset.price;
+                var weight = +el.dataset.weight;
                 var moq = +el.dataset.moq;
-                var step = +el.dataset.step;
                 var inp = el.querySelector('.qty-input');
                 var qty = +inp.dataset.qty;
                 var line = price * qty;
+                var lineW = qty * weight;
                 subtotal += line;
+                totalWeight += lineW;
                 el.querySelector('.line-amt').textContent = fmt(line);
                 inp.value = fmtQty(qty);
+                var wTag = el.querySelector('.item-weight');
+                if (wTag) wTag.textContent = fmtW(lineW) + ' کیلوگرم';
+
+                var minusBtn = el.querySelector('.qty-minus');
+                if (minusBtn) minusBtn.disabled = qty <= moq;
               });
-              var tier = TIERS[getSelectedTier()] || TIERS.normal;
-              var total = subtotal + tier.cost;
+
+              // Shipping cost based on total weight
+              var tierKey = getSelectedTier();
+              var shipCost = Math.round(totalWeight * (SHIP_PER_KG[tierKey] || SHIP_PER_KG.normal));
+              var total = subtotal + shipCost;
               var half = Math.round(total / 2);
 
-              var sub = document.getElementById('subtotal-amt');
-              if (sub) sub.textContent = fmt(subtotal);
-              document.getElementById('tier-label').textContent = tier.label;
-              document.getElementById('shipping-cost').textContent = fmt(tier.cost);
+              // Update tier picker costs
+              document.querySelectorAll('#cart-tier-picker label').forEach(function(lbl){
+                var radio = lbl.querySelector('input');
+                var costEl = lbl.querySelector('.cost');
+                if (radio && costEl) {
+                  var tk = radio.value;
+                  costEl.textContent = fmt(Math.round(totalWeight * (SHIP_PER_KG[tk] || 0)));
+                }
+              });
+
+              document.getElementById('items-count').textContent = toFa(itemCount) + ' کالا';
+              document.getElementById('total-weight').textContent = fmtW(totalWeight) + ' کیلوگرم';
+              document.getElementById('subtotal-amt').textContent = fmt(subtotal);
+              document.getElementById('tier-label').textContent = TIER_LABELS[tierKey] || 'عادی';
+              document.getElementById('shipping-cost').textContent = fmt(shipCost);
               document.getElementById('total-cost').textContent = fmt(total);
               document.getElementById('phase1-amt').textContent = fmt(half);
-              document.getElementById('phase2-amt').textContent = fmt(half);
+              document.getElementById('phase2-amt').textContent = fmt(total - half);
+
+              // Update header badge
+              var badge = document.querySelector('.cart-link .badge-count');
+              if (badge) badge.textContent = toFa(itemCount);
+
+              // Show/hide empty state
+              var emptyEl = document.getElementById('cart-empty');
+              var summaryEl = document.getElementById('summary-card');
+              var tierSection = document.getElementById('cart-tier-picker');
+              if (itemCount === 0) {
+                emptyEl.style.display = 'flex';
+                if (summaryEl) summaryEl.style.display = 'none';
+                if (tierSection) tierSection.closest('section').style.display = 'none';
+              } else {
+                emptyEl.style.display = 'none';
+                if (summaryEl) summaryEl.style.display = '';
+                if (tierSection) tierSection.closest('section').style.display = '';
+              }
             }
 
             // Initialize data-qty on inputs
@@ -269,7 +345,7 @@
               inp.dataset.qty = el.dataset.moq;
             });
 
-            // Qty +/- buttons
+            // Qty +/- buttons and remove with animation
             document.getElementById('cart-lines').addEventListener('click', function(e){
               var btn = e.target.closest('.qty-plus, .qty-minus, .remove');
               if (!btn) return;
@@ -277,8 +353,8 @@
               if (!item) return;
 
               if (btn.classList.contains('remove')){
-                item.remove();
-                recalc();
+                item.classList.add('removing');
+                setTimeout(function(){ item.remove(); recalc(); }, 350);
                 return;
               }
 

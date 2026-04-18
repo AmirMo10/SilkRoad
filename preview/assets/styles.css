@@ -1420,3 +1420,94 @@ html[dir="rtl"] .gallery-badge { left: auto; right: 1rem; }
   font-size: 0.7rem; color: var(--sr-fg-muted);
   margin-inline-start: 0.35rem;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Cart Page Enhancement — animations, empty state, weight display
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Cart item remove animation */
+.cart-item {
+  transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.35s ease;
+  max-height: 300px;
+  overflow: hidden;
+}
+.cart-item.removing {
+  opacity: 0;
+  transform: scale(0.95);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* MOQ warning inline */
+.cart-item .moq-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.7rem; color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 999px; padding: 0.15rem 0.6rem;
+  margin-inline-start: 0.5rem;
+}
+
+/* Weight display in cart item meta */
+.cart-item .info .weight-tag {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  font-size: 0.75rem; color: var(--sr-fg-muted);
+}
+.cart-item .info .weight-tag .icon { width: 12px; height: 12px; }
+
+/* Empty cart state */
+.cart-empty {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+}
+.cart-empty .empty-icon {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: var(--sr-glass);
+  border: 1px solid var(--sr-glass-border);
+  display: grid; place-items: center;
+  color: var(--sr-fg-muted);
+  margin-bottom: 1.5rem;
+}
+.cart-empty .empty-icon .icon { width: 40px; height: 40px; stroke-width: 1.2; }
+.cart-empty h2 {
+  font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;
+}
+.cart-empty p {
+  color: var(--sr-fg-muted); font-size: 0.95rem;
+  max-width: 24rem; margin-bottom: 1.5rem;
+}
+
+/* Summary card weight row */
+.summary-weight {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; color: var(--sr-fg-muted);
+  padding: 0.5rem 0.75rem;
+  background: var(--sr-glass);
+  border: 1px solid var(--sr-glass-border);
+  border-radius: var(--sr-radius);
+}
+.summary-weight .icon { width: 14px; height: 14px; color: var(--sr-gold-400); }
+.summary-weight .weight-val { font-weight: 700; color: var(--sr-fg); }
+
+/* Items count in summary */
+.summary-items-count {
+  font-size: 0.8rem; color: var(--sr-fg-muted);
+}
+
+/* Dynamic shipping cost label in tier picker */
+.tier-picker .cost {
+  transition: all 0.2s ease;
+}
+.tier-picker .cost.updating {
+  opacity: 0.5;
+}
+
+/* Checkout button disabled state */
+.btn-block:disabled, .btn-block.disabled {
+  opacity: 0.4; pointer-events: none;
+}
