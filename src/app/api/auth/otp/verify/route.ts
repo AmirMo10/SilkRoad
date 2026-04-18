@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { verifyOtpAndLogin, AuthError } from "@/server/services/auth.service";
+import { requireXRequestedWith } from "@/lib/auth/csrf";
 
 const schema = z.object({
   phone: z.string().min(10).max(15),
@@ -8,6 +9,9 @@ const schema = z.object({
 });
 
 export async function POST(req: Request) {
+  const csrfError = requireXRequestedWith(req);
+  if (csrfError) return csrfError;
+
   try {
     const body = schema.parse(await req.json());
     const { user, accessToken, refreshToken } = await verifyOtpAndLogin(body.phone, body.code);

@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { verifyRefreshToken } from "@/lib/auth/jwt";
-import { signAccessToken } from "@/lib/auth/jwt";
+import { verifyRefreshToken, signAccessToken } from "@/lib/auth/jwt";
 import { db } from "@/server/db";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
+import { requireXRequestedWith } from "@/lib/auth/csrf";
 
-export async function POST() {
+export async function POST(req: Request) {
+  const csrfError = requireXRequestedWith(req);
+  if (csrfError) return csrfError;
+
   try {
     const cookieStore = await cookies();
     const token = cookieStore.get("sr_refresh")?.value;
