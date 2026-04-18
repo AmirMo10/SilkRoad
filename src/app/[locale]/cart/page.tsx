@@ -57,6 +57,8 @@ export default function CartPage() {
                     moqWarning: t("item.moqWarning"),
                     perUnit: t("item.perUnit"),
                     lineTotal: t("item.lineTotal"),
+                    weight: t("item.weight"),
+                    kg: t("item.kg"),
                   }}
                 />
               ))}
