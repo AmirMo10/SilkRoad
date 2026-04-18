@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "راه ابریشم | SilkRoad — بازار عمده‌فروشی چین به ایران",
   description:
     "واردات عمده از چین به ایران با قیمت‌های مستقیم تولیدکننده. سه روش ارسال: اکسپرس، عادی، اقتصادی. پرداخت مرحله‌ای.",
+  manifest: "/manifest.json",
 };
 
 export function generateStaticParams() {
