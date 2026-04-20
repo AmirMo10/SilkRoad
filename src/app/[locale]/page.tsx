@@ -4,14 +4,8 @@ import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { formatToman, formatMoq } from "@/lib/formatters";
-
-const FEATURED = [
-  { key: "headphones", price: 185_000, moq: 1000, img: "🎧" },
-  { key: "watch", price: 420_000, moq: 500, img: "⌚" },
-  { key: "powerbank", price: 95_000, moq: 2000, img: "🔋" },
-  { key: "camera", price: 680_000, moq: 200, img: "📷" },
-] as const;
+import { ProductCard } from "@/components/product/product-card";
+import { getServerTrpc } from "@/server/api/server";
 
 const TIERS = ["turbo", "normal", "economy"] as const;
 const TIER_ICONS: Record<(typeof TIERS)[number], string> = {
@@ -23,8 +17,10 @@ const TIER_ICONS: Record<(typeof TIERS)[number], string> = {
 export default async function HomePage() {
   const tHome = await getTranslations("home");
   const tShipping = await getTranslations("shipping");
-  const tProducts = await getTranslations("products");
   const tCommon = await getTranslations("common");
+
+  const trpc = await getServerTrpc();
+  const featuredProducts = await trpc.products.featured({ limit: 4 });
 
   return (
     <>
@@ -81,22 +77,8 @@ export default async function HomePage() {
             {tHome("featuredSection.subtitle")}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {FEATURED.map((p) => (
-              <Card key={p.key}>
-                <div className="aspect-square rounded-[var(--sr-radius)] bg-[var(--sr-navy-800)] flex items-center justify-center text-7xl mb-4">
-                  {p.img}
-                </div>
-                <h3 className="font-semibold mb-2 line-clamp-2">
-                  {tProducts(`samples.${p.key}`)}
-                </h3>
-                <Badge className="mb-3">{formatMoq(p.moq)}</Badge>
-                <div className="text-lg font-bold text-[var(--sr-gold-400)]">
-                  {formatToman(p.price)}
-                </div>
-                <div className="text-xs text-[var(--sr-fg-muted)] mt-1">
-                  {tProducts("card.perUnit")}
-                </div>
-              </Card>
+            {featuredProducts.map((p) => (
+              <ProductCard key={p.id} product={p} />
             ))}
           </div>
         </section>
