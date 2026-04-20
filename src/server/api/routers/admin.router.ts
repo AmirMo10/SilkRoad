@@ -1,10 +1,21 @@
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 import { sql, eq, desc, count } from "drizzle-orm";
 import { adminProcedure, router } from "../trpc";
 import { products } from "@/server/db/schema/products";
 import { orders } from "@/server/db/schema/orders";
 import { users } from "@/server/db/schema/users";
 import { categories } from "@/server/db/schema/categories";
+import {
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  ProductError,
+} from "@/server/services/product.service";
+import {
+  updateOrderStatus,
+  OrderError,
+} from "@/server/services/order.service";
 
 export const adminRouter = router({
   stats: adminProcedure.query(async ({ ctx }) => {
@@ -138,5 +149,82 @@ export const adminRouter = router({
         })),
         total: total?.value ?? 0,
       };
+    }),
+
+  createProduct: adminProcedure
+    .input(
+      z.object({
+        slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/),
+        nameFa: z.string().min(1).max(200),
+        nameEn: z.string().min(1).max(200),
+        descriptionFa: z.string().min(1),
+        descriptionEn: z.string().min(1),
+        categoryId: z.string().uuid(),
+        wholesalePriceRial: z.bigint().positive(),
+        moq: z.number().int().min(1),
+        quantityStep: z.number().int().min(1).default(1),
+        weightKg: z.string().regex(/^\d+(\.\d{1,3})?$/),
+        volumeCbm: z.string().regex(/^\d+(\.\d{1,4})?$/),
+        images: z.array(z.string().url()).default([]),
+        splitPaymentRatio: z.string().regex(/^0\.(4[0-9]|50)$/).optional(),
+      }),
+    )
+    .mutation(async ({ input }) => createProduct(input)),
+
+  updateProduct: adminProcedure
+    .input(
+      z.object({
+        id: z.string().uuid(),
+        slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/).optional(),
+        nameFa: z.string().min(1).max(200).optional(),
+        nameEn: z.string().min(1).max(200).optional(),
+        descriptionFa: z.string().min(1).optional(),
+        descriptionEn: z.string().min(1).optional(),
+        categoryId: z.string().uuid().optional(),
+        wholesalePriceRial: z.bigint().positive().optional(),
+        moq: z.number().int().min(1).optional(),
+        quantityStep: z.number().int().min(1).optional(),
+        weightKg: z.string().regex(/^\d+(\.\d{1,3})?$/).optional(),
+        volumeCbm: z.string().regex(/^\d+(\.\d{1,4})?$/).optional(),
+        images: z.array(z.string().url()).optional(),
+        splitPaymentRatio: z.string().regex(/^0\.(4[0-9]|50)$/).optional(),
+      }),
+    )
+    .mutation(async ({ input }) => {
+      const { id, ...rest } = input;
+      try {
+        return await updateProduct(id, rest);
+      } catch (err) {
+        if (err instanceof ProductError && err.code === "NOT_FOUND") {
+          throw new TRPCError({ code: "NOT_FOUND", message: err.message });
+        }
+        throw err;
+      }
+    }),
+
+  deleteProduct: adminProcedure
+    .input(z.object({ id: z.string().uuid() }))
+    .mutation(async ({ input }) => {
+      try {
+        return await deleteProduct(input.id);
+      } catch (err) {
+        if (err instanceof ProductError && err.code === "NOT_FOUND") {
+          throw new TRPCError({ code: "NOT_FOUND", message: err.message });
+        }
+        throw err;
+      }
+    }),
+
+  updateOrderStatus: adminProcedure
+    .input(z.object({ orderId: z.string().uuid(), status: z.string() }))
+    .mutation(async ({ input }) => {
+      try {
+        return await updateOrderStatus(input.orderId, input.status);
+      } catch (err) {
+        if (err instanceof OrderError) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: err.message });
+        }
+        throw err;
+      }
     }),
 });
