@@ -3,5 +3,8 @@
   "moqStepViolation": "Quantity must be a multiple of {step}",
   "productInactive": "This product is temporarily unavailable",
   "generic": "Something went wrong. Please try again.",
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
+  "retry": "Try again",
+  "backHome": "Back to home"
 }

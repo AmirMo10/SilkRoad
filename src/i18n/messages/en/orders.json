@@ -46,5 +46,14 @@
   "items": "Order items",
   "quantity": "Qty",
   "unitPrice": "Unit price",
-  "backToOrders": "Back to orders"
+  "backToOrders": "Back to orders",
+  "list": {
+    "title": "My Orders",
+    "subtitle": "Track your wholesale orders and payments",
+    "empty": "You don't have any orders yet",
+    "emptyDesc": "Once you place an order, it will appear here with payment and shipping tracking.",
+    "browseProducts": "Browse products",
+    "orderDate": "Placed on",
+    "viewDetails": "View details"
+  }
 }

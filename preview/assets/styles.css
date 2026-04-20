@@ -1132,9 +1132,65 @@ footer.site .legal {
 .section-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; }
 .table-count { font-size: 0.85rem; color: var(--sr-fg-muted); margin-bottom: 0.75rem; }
 
+/* Admin mobile navigation */
+.admin-mobile-bar {
+  display: none;
+  position: sticky; top: 0; z-index: 90;
+  background: var(--sr-surface);
+  border-bottom: 1px solid var(--sr-glass-border);
+  padding: 0.75rem 1rem;
+  align-items: center; justify-content: space-between;
+}
+.admin-mobile-bar .bar-title {
+  font-weight: 700; font-size: 0.95rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.admin-mobile-bar .bar-title .icon { width: 18px; height: 18px; color: var(--sr-gold-400); }
+.admin-hamburger {
+  background: none; border: none; color: var(--sr-fg); cursor: pointer;
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border-radius: var(--sr-radius); transition: background 0.15s;
+}
+.admin-hamburger:hover { background: var(--sr-glass); }
+.admin-hamburger svg { width: 22px; height: 22px; }
+.admin-drawer-overlay {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(2px);
+}
+.admin-drawer-overlay.open { display: block; }
+.admin-drawer {
+  position: fixed; top: 0; z-index: 101;
+  width: 260px; height: 100vh;
+  background: var(--sr-surface);
+  border-inline-end: 1px solid var(--sr-glass-border);
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  padding: 1rem 0; overflow-y: auto;
+}
+html[dir="rtl"] .admin-drawer { transform: translateX(100%); }
+.admin-drawer.open { transform: translateX(0) !important; }
+.admin-drawer .drawer-close {
+  position: absolute; top: 0.75rem; inset-inline-end: 0.75rem;
+  background: none; border: none; color: var(--sr-fg-muted); cursor: pointer;
+  width: 32px; height: 32px; display: grid; place-items: center;
+}
+.admin-drawer .drawer-close:hover { color: var(--sr-fg); }
+.admin-drawer nav { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.25rem; padding: 0 0.75rem; }
+.admin-drawer nav a {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 0.75rem; border-radius: var(--sr-radius);
+  color: var(--sr-fg-muted); font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; transition: all 0.15s;
+}
+.admin-drawer nav a:hover, .admin-drawer nav a.active {
+  background: rgba(212,175,55,0.08); color: var(--sr-gold-300);
+}
+.admin-drawer nav a .icon { width: 18px; height: 18px; }
+
 @media (max-width: 768px) {
   .admin-sidebar { display: none; }
   .admin-main { padding: 1.25rem; }
+  .admin-mobile-bar { display: flex; }
 }
 
 /* ─── Order detail / payment tracker ─── */
