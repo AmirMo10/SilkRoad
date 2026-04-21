@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1d2a6b"/>
+      <stop offset="100%" stop-color="#0b1230"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d77f"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b8942e"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d2a6b"/>
+      <stop offset="100%" stop-color="#131c4a"/>
+    </linearGradient>
+    <linearGradient id="chargeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="60%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#f0d77f"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="110" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <!-- Power bank body -->
+    <rect x="115" y="110" width="170" height="200" rx="22" fill="url(#bodyGrad)" stroke="url(#gold)" stroke-width="2"/>
+    <!-- Top edge highlight -->
+    <path d="M137 112 Q200 106 263 112" fill="none" stroke="#f0d77f" stroke-width="0.8" opacity="0.4"/>
+    <!-- Display area -->
+    <rect x="150" y="145" width="100" height="40" rx="8" fill="#070b1c" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/>
+    <!-- Battery level bars -->
+    <rect x="162" y="157" width="16" height="16" rx="2" fill="#34d399" opacity="0.9"/>
+    <rect x="182" y="157" width="16" height="16" rx="2" fill="#34d399" opacity="0.9"/>
+    <rect x="202" y="157" width="16" height="16" rx="2" fill="#d4af37" opacity="0.9"/>
+    <rect x="222" y="157" width="16" height="16" rx="2" fill="#d4af37" opacity="0.25"/>
+    <!-- Percentage text -->
+    <text x="200" y="210" text-anchor="middle" fill="#e6c25a" font-family="Inter,monospace" font-size="22" font-weight="700" opacity="0.9">75%</text>
+    <!-- mAh label -->
+    <text x="200" y="232" text-anchor="middle" fill="#f5f1e8" font-family="Inter,monospace" font-size="10" opacity="0.4">20,000 mAh</text>
+    <!-- USB-C port -->
+    <rect x="183" y="255" width="34" height="10" rx="4" fill="#070b1c" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+    <!-- USB-A port -->
+    <rect x="183" y="275" width="34" height="10" rx="3" fill="#070b1c" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+    <!-- Charge indicator line -->
+    <rect x="140" y="295" width="120" height="3" rx="1.5" fill="#131c4a"/>
+    <rect x="140" y="295" width="90" height="3" rx="1.5" fill="url(#chargeGrad)" opacity="0.7"/>
+  </g>
+  <!-- Lightning bolt accent -->
+  <path d="M192 130 L188 140 L196 140 L190 152" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.3"/>
+  <!-- Decorative -->
+  <circle cx="65" cy="330" r="2.5" fill="#d4af37" opacity="0.25"/>
+  <circle cx="340" cy="310" r="2" fill="#d4af37" opacity="0.2"/>
+  <text x="200" y="350" text-anchor="middle" fill="#e6c25a" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" opacity="0.7">MEGA CHARGE</text>
+  <text x="200" y="372" text-anchor="middle" fill="#f5f1e8" font-family="Inter,system-ui,sans-serif" font-size="11" opacity="0.4">20000 mAh Power Bank</text>
+</svg>

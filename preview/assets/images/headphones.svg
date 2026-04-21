@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1d2a6b"/>
+      <stop offset="100%" stop-color="#0b1230"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d77f"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b8942e"/>
+    </linearGradient>
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e6c25a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="180" r="120" fill="url(#glow)"/>
+  <!-- Headband -->
+  <g filter="url(#shadow)">
+    <path d="M120 180 Q120 100 200 90 Q280 100 280 180" fill="none" stroke="url(#gold)" stroke-width="10" stroke-linecap="round"/>
+    <!-- Left ear cup -->
+    <ellipse cx="118" cy="195" rx="38" ry="48" fill="#131c4a" stroke="url(#gold)" stroke-width="3"/>
+    <ellipse cx="118" cy="195" rx="28" ry="38" fill="#1d2a6b" stroke="url(#goldLight)" stroke-width="1.5"/>
+    <ellipse cx="118" cy="195" rx="15" ry="20" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+    <!-- Left cushion -->
+    <path d="M88 165 Q80 195 88 225" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <!-- Right ear cup -->
+    <ellipse cx="282" cy="195" rx="38" ry="48" fill="#131c4a" stroke="url(#gold)" stroke-width="3"/>
+    <ellipse cx="282" cy="195" rx="28" ry="38" fill="#1d2a6b" stroke="url(#goldLight)" stroke-width="1.5"/>
+    <ellipse cx="282" cy="195" rx="15" ry="20" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+    <!-- Right cushion -->
+    <path d="M312 165 Q320 195 312 225" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- Decorative dots -->
+  <circle cx="60" cy="320" r="3" fill="#d4af37" opacity="0.3"/>
+  <circle cx="90" cy="340" r="2" fill="#d4af37" opacity="0.2"/>
+  <circle cx="320" cy="310" r="2.5" fill="#d4af37" opacity="0.25"/>
+  <circle cx="340" cy="340" r="1.5" fill="#d4af37" opacity="0.15"/>
+  <!-- Label -->
+  <text x="200" y="320" text-anchor="middle" fill="#e6c25a" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" opacity="0.7">WIRELESS PRO</text>
+  <text x="200" y="345" text-anchor="middle" fill="#f5f1e8" font-family="Inter,system-ui,sans-serif" font-size="11" opacity="0.4">Premium Audio</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1d2a6b"/>
+      <stop offset="100%" stop-color="#0b1230"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d77f"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b8942e"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d2a6b"/>
+      <stop offset="50%" stop-color="#131c4a"/>
+      <stop offset="100%" stop-color="#070b1c"/>
+    </linearGradient>
+    <radialGradient id="lensReflect" cx="35%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#f0d77f" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="185" r="110" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <!-- Camera body -->
+    <rect x="110" y="135" width="180" height="130" rx="16" fill="#131c4a" stroke="url(#gold)" stroke-width="2"/>
+    <!-- Top housing -->
+    <path d="M140 135 L140 120 Q140 112 148 112 L180 112 Q188 112 190 120 L195 135" fill="#131c4a" stroke="url(#gold)" stroke-width="1.5"/>
+    <!-- Antenna -->
+    <rect x="255" y="100" width="6" height="40" rx="3" fill="#1d2a6b" stroke="url(#gold)" stroke-width="1"/>
+    <circle cx="258" cy="98" r="4" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+    <circle cx="258" cy="98" r="8" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/>
+    <!-- Main lens ring -->
+    <circle cx="200" cy="195" r="42" fill="#0b1230" stroke="url(#gold)" stroke-width="2.5"/>
+    <circle cx="200" cy="195" r="35" fill="url(#lensGrad)" stroke="#d4af37" stroke-width="1" opacity="0.7"/>
+    <!-- Inner lens -->
+    <circle cx="200" cy="195" r="25" fill="#070b1c" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/>
+    <!-- Lens reflection -->
+    <circle cx="200" cy="195" r="25" fill="url(#lensReflect)"/>
+    <!-- IR LED dots -->
+    <circle cx="156" cy="160" r="4" fill="#ef4444" opacity="0.7"/>
+    <circle cx="156" cy="175" r="3" fill="#ef4444" opacity="0.4"/>
+    <circle cx="244" cy="160" r="4" fill="#ef4444" opacity="0.7"/>
+    <circle cx="244" cy="175" r="3" fill="#ef4444" opacity="0.4"/>
+    <!-- Status LED -->
+    <circle cx="168" cy="245" r="3" fill="#34d399" opacity="0.8"/>
+    <!-- WiFi indicator -->
+    <path d="M220 240 Q228 234 236 240" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.5"/>
+    <path d="M224 244 Q228 240 232 244" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.5"/>
+    <circle cx="228" cy="247" r="1.5" fill="#d4af37" opacity="0.5"/>
+    <!-- Wall mount base -->
+    <path d="M180 265 L180 285 Q180 295 190 295 L210 295 Q220 295 220 285 L220 265" fill="#131c4a" stroke="url(#gold)" stroke-width="1.5"/>
+    <circle cx="200" cy="280" r="6" fill="#070b1c" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+  </g>
+  <!-- Decorative -->
+  <circle cx="55" cy="330" r="2.5" fill="#d4af37" opacity="0.25"/>
+  <circle cx="345" cy="320" r="2" fill="#d4af37" opacity="0.2"/>
+  <text x="200" y="340" text-anchor="middle" fill="#e6c25a" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" opacity="0.7">SMART CAM</text>
+  <text x="200" y="362" text-anchor="middle" fill="#f5f1e8" font-family="Inter,system-ui,sans-serif" font-size="11" opacity="0.4">WiFi Security Camera</text>
+</svg>
