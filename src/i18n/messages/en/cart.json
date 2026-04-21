@@ -1,21 +1,26 @@
 {
   "page": {
-    "title": "Shopping cart",
-    "subtitle": "Review and confirm your order",
+    "title": "Your cart",
+    "subtitle": "Each item must meet its minimum order quantity. Pay 50% on order, 50% on arrival.",
     "empty": "Your cart is empty",
-    "emptyCta": "Browse the catalog"
+    "emptyDesc": "Browse our wholesale catalog and add products to get started.",
+    "emptyCta": "Browse products",
+    "itemCount": "{count} items"
   },
   "item": {
     "perUnit": "per unit",
     "lineTotal": "Line total",
     "remove": "Remove",
-    "moqWarning": "Quantity is below MOQ"
+    "moqWarning": "Quantity is below MOQ",
+    "weight": "Weight",
+    "kg": "kg"
   },
   "summary": {
     "title": "Order summary",
     "subtotal": "Subtotal",
     "shipping": "Shipping",
     "total": "Total",
+    "totalWeight": "Total weight",
     "secure": "Secure payment",
     "splitTitle": "Split payment",
     "phase1": "Upfront",
@@ -23,6 +28,7 @@
     "phase2": "Remaining",
     "phase2Desc": "On arrival in Iran",
     "proceed": "Proceed to checkout",
-    "moqError": "One or more items are below their MOQ"
+    "moqError": "One or more items are below their MOQ",
+    "shippingTier": "Shipping tier"
   }
 }

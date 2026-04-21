@@ -278,5 +278,55 @@
         </div>
       </main>
     </div>
+
+    <script>
+    (function(){
+      // Interactive filter pills — filter table rows by status badge text
+      var pills = document.querySelectorAll('.filter-pills button');
+      var rows = document.querySelectorAll('.admin-table tbody tr');
+      var countEl = document.querySelector('.table-count');
+
+      pills.forEach(function(pill){
+        pill.addEventListener('click', function(){
+          pills.forEach(function(p){ p.classList.remove('active'); });
+          pill.classList.add('active');
+
+          var filter = pill.textContent.trim();
+          var isAll = pill === pills[0];
+          var visible = 0;
+
+          rows.forEach(function(row){
+            var badge = row.querySelector('.badge');
+            if (!badge) return;
+            var status = badge.textContent.trim();
+            if (isAll || status === filter) {
+              row.classList.remove('hidden-row');
+              row.style.display = '';
+              visible++;
+            } else {
+              row.classList.add('hidden-row');
+              row.style.display = 'none';
+            }
+          });
+
+          if (countEl) countEl.textContent = visible + ' orders';
+        });
+      });
+
+      // Quick action buttons
+      document.querySelectorAll('.admin-table .actions button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var row = btn.closest('tr');
+          var orderId = row.querySelector('.mono').textContent;
+          var isView = btn.getAttribute('title') === 'View details';
+          if (isView) {
+            alert('View order ' + orderId);
+          } else {
+            alert('Update status for ' + orderId);
+          }
+        });
+      });
+    })();
+    </script>
   </body>
 </html>

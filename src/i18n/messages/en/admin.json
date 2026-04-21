@@ -1,4 +1,5 @@
 {
+  "panelTitle": "Admin Panel",
   "nav": {
     "dashboard": "Dashboard",
     "products": "Products",
@@ -17,7 +18,18 @@
     "registeredUsers": "Registered Users",
     "recentOrders": "Recent Orders",
     "topProducts": "Top Products",
-    "noData": "No data available yet"
+    "noData": "No data available yet",
+    "monthlyRevenue": "Monthly Revenue",
+    "thisYear": "This year",
+    "lastYear": "Last year",
+    "vsLastMonth": "vs last month",
+    "fewerThanLastWeek": "fewer than last week",
+    "newUsers": "new users",
+    "ordersAwaitingPayment": "orders awaiting payment",
+    "completed": "Completed",
+    "inTransit": "In transit",
+    "awaitingPayment": "Awaiting payment",
+    "cancelled": "Cancelled"
   },
   "products": {
     "title": "Product Management",

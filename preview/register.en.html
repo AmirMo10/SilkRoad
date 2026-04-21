@@ -23,6 +23,27 @@
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </symbol>
+        <symbol id="i-check-circle" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="i-x-circle" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <line x1="15" y1="9" x2="9" y2="15" />
+          <line x1="9" y1="9" x2="15" y2="15" />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </symbol>
       </defs>
     </svg>
 
@@ -60,23 +81,81 @@
           <h1>Create account</h1>
           <p class="sub">Set up your wholesale buyer account</p>
 
-          <form onsubmit="return false" style="text-align: start">
+          <form onsubmit="return false" style="text-align: start" id="registerForm">
             <div class="form-group">
               <label for="name">Full name</label>
-              <input id="name" type="text" placeholder="Your name" />
+              <input id="name" type="text" placeholder="Your full name" autocomplete="name" />
+              <div class="field-msg" id="nameMsg"></div>
             </div>
             <div class="form-group">
               <label for="phone">Mobile number</label>
-              <input id="phone" type="tel" dir="ltr" inputmode="numeric" placeholder="09123456789" />
+              <div class="phone-input-wrap" id="phoneWrap">
+                <div class="phone-prefix"><span class="flag">🇮🇷</span> +98</div>
+                <input id="phone" type="tel" dir="ltr" inputmode="numeric" placeholder="912 345 6789" maxlength="11" autocomplete="tel" />
+                <div class="phone-status">
+                  <svg class="icon icon-sm icon-valid"><use href="#i-check-circle" /></svg>
+                  <svg class="icon icon-sm icon-invalid"><use href="#i-x-circle" /></svg>
+                </div>
+              </div>
+              <div class="field-msg" id="phoneMsg"></div>
             </div>
-            <button type="button" class="btn btn-primary btn-xl btn-block">
-              Send verification code
+            <button type="button" class="btn btn-primary btn-xl btn-block" id="sendOtpBtn" disabled>
+              <span class="btn-text">Send verification code</span>
             </button>
           </form>
+
+          <div class="trust-row">
+            <span class="trust-item"><svg class="icon"><use href="#i-shield" /></svg> Secure auth</span>
+            <span class="trust-item"><svg class="icon"><use href="#i-lock" /></svg> Encrypted</span>
+            <span class="trust-item"><svg class="icon"><use href="#i-clock" /></svg> One-time code</span>
+          </div>
 
           <div class="footer">
             Already have an account? <a href="login.en.html">Sign in</a>
           </div>
+
+          <script>
+          (function(){
+            var nameInput = document.getElementById('name');
+            var nameMsg = document.getElementById('nameMsg');
+            var phoneInput = document.getElementById('phone');
+            var phoneWrap = document.getElementById('phoneWrap');
+            var phoneMsg = document.getElementById('phoneMsg');
+            var sendBtn = document.getElementById('sendOtpBtn');
+            var nameValid = false, phoneValid = false;
+
+            function validatePhone(raw) {
+              var clean = raw.replace(/[\s\-()]/g, '');
+              if (/^09\d{9}$/.test(clean)) return clean;
+              if (/^9\d{9}$/.test(clean)) return '0' + clean;
+              return null;
+            }
+            function checkReady() { sendBtn.disabled = !(nameValid && phoneValid); }
+
+            nameInput.addEventListener('input', function(){
+              var v = nameInput.value.trim();
+              if (v.length >= 2) { nameValid = true; nameMsg.className = 'field-msg'; nameMsg.textContent = ''; }
+              else if (v.length > 0) { nameValid = false; nameMsg.className = 'field-msg error'; nameMsg.textContent = 'Name must be at least 2 characters'; }
+              else { nameValid = false; nameMsg.className = 'field-msg'; nameMsg.textContent = ''; }
+              checkReady();
+            });
+
+            phoneInput.addEventListener('input', function(){
+              var clean = phoneInput.value.replace(/[^\d]/g, '');
+              if (clean.length === 0) { phoneWrap.classList.remove('valid','error'); phoneMsg.className='field-msg'; phoneValid=false; }
+              else if (validatePhone(phoneInput.value)) { phoneWrap.classList.remove('error'); phoneWrap.classList.add('valid'); phoneMsg.className='field-msg valid'; phoneMsg.textContent='Valid mobile number'; phoneValid=true; }
+              else if (clean.length >= 4) { phoneWrap.classList.remove('valid'); phoneWrap.classList.add('error'); phoneMsg.className='field-msg error'; phoneMsg.textContent='Invalid format (e.g. 09123456789)'; phoneValid=false; }
+              else { phoneWrap.classList.remove('valid','error'); phoneMsg.className='field-msg'; phoneValid=false; }
+              checkReady();
+            });
+
+            sendBtn.addEventListener('click', function(){
+              if (sendBtn.disabled) return;
+              sendBtn.classList.add('btn-loading');
+              setTimeout(function(){ sendBtn.classList.remove('btn-loading'); window.location.href='verify-otp.en.html'; }, 1500);
+            });
+          })();
+          </script>
         </div>
       </div>
     </main>

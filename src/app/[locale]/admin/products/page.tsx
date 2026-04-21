@@ -1,29 +1,36 @@
-"use client";
-
-import { useLocale, useTranslations } from "next-intl";
+import { revalidatePath } from "next/cache";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icon";
 import { formatToman, toPersianDigits } from "@/lib/formatters";
+import { getServerTrpc } from "@/server/api/server";
 
-export default function AdminProductsPage() {
-  const locale = useLocale();
-  const t = useTranslations("admin.products");
+async function toggleProductAction(formData: FormData) {
+  "use server";
+  const id = formData.get("id") as string;
+  const isActive = formData.get("isActive") === "true";
+  const trpc = await getServerTrpc();
+  await trpc.admin.toggleProduct({ id, isActive: !isActive });
+  revalidatePath("/[locale]/admin/products", "page");
+}
+
+export default async function AdminProductsPage() {
+  const locale = await getLocale();
+  const t = await getTranslations("admin.products");
 
   const fmt = (n: number) =>
     locale === "fa" ? formatToman(n) : `${n.toLocaleString("en-US")} T`;
   const fmtNum = (n: number) =>
     locale === "fa" ? toPersianDigits(n.toLocaleString("en-US")) : n.toLocaleString("en-US");
 
-  // Placeholder data — tRPC queries will replace this when DB is connected
-  const products = [
-    { id: "1", nameFa: "هدفون بلوتوثی شیائومی", nameEn: "Xiaomi Bluetooth Headphones", priceToman: 185_000, moq: 1000, step: 100, weightKg: 0.28, category: "الکترونیک", categoryEn: "Electronics", isActive: true },
-    { id: "2", nameFa: "ساعت هوشمند T500 Pro", nameEn: "T500 Pro Smartwatch", priceToman: 420_000, moq: 500, step: 50, weightKg: 0.12, category: "ساعت", categoryEn: "Watches", isActive: true },
-    { id: "3", nameFa: "کابل شارژ تایپ‌سی ۱ متری", nameEn: "USB-C Charging Cable 1m", priceToman: 18_500, moq: 5000, step: 500, weightKg: 0.04, category: "لوازم جانبی", categoryEn: "Accessories", isActive: true },
-    { id: "4", nameFa: "پاوربانک ۲۰۰۰۰ میلی‌آمپر", nameEn: "20000mAh Power Bank", priceToman: 310_000, moq: 500, step: 50, weightKg: 0.45, category: "الکترونیک", categoryEn: "Electronics", isActive: false },
-    { id: "5", nameFa: "قاب سیلیکونی آیفون ۱۵", nameEn: "iPhone 15 Silicone Case", priceToman: 45_000, moq: 2000, step: 200, weightKg: 0.03, category: "لوازم جانبی", categoryEn: "Accessories", isActive: true },
-    { id: "6", nameFa: "اسپیکر بلوتوثی JBL کپی", nameEn: "JBL Replica Bluetooth Speaker", priceToman: 275_000, moq: 300, step: 50, weightKg: 0.55, category: "الکترونیک", categoryEn: "Electronics", isActive: true },
-  ];
+  const trpc = await getServerTrpc();
+  const [{ items: products, total }, categories] = await Promise.all([
+    trpc.admin.productsList({ limit: 50, offset: 0 }),
+    trpc.categories.list(),
+  ]);
+
+  const categoryMap = new Map(categories.map((c) => [c.id, locale === "fa" ? c.nameFa : c.nameEn]));
 
   return (
     <div>
@@ -39,9 +46,7 @@ export default function AdminProductsPage() {
       </header>
 
       <div className="mb-4 text-sm text-[var(--sr-fg-muted)]">
-        {locale === "fa"
-          ? t("count", { count: products.length })
-          : t("count", { count: products.length })}
+        {t("count", { count: total })}
       </div>
 
       <Card className="overflow-hidden p-0">
@@ -72,28 +77,33 @@ export default function AdminProductsPage() {
                   </td>
                   <td className="px-4 py-3">{fmtNum(product.moq)}</td>
                   <td className="px-4 py-3 text-[var(--sr-fg-muted)]">
-                    {fmtNum(product.weightKg)} {locale === "fa" ? "کیلوگرم" : "kg"}
+                    {fmtNum(Number(product.weightKg))} {locale === "fa" ? "کیلوگرم" : "kg"}
                   </td>
                   <td className="px-4 py-3">
                     <Badge className="text-xs">
-                      {locale === "fa" ? product.category : product.categoryEn}
+                      {categoryMap.get(product.categoryId) ?? product.categoryId.slice(0, 8)}
                     </Badge>
                   </td>
                   <td className="px-4 py-3">
-                    <button
-                      className="inline-flex items-center gap-1.5 text-xs"
-                      title={product.isActive ? t("active") : t("inactive")}
-                    >
-                      <Icon
-                        name={product.isActive ? "toggleOn" : "toggleOff"}
-                        size={28}
-                        strokeWidth={1.5}
-                        className={product.isActive ? "text-emerald-400" : "text-[var(--sr-fg-muted)]"}
-                      />
-                      <span className={product.isActive ? "text-emerald-400" : "text-[var(--sr-fg-muted)]"}>
-                        {product.isActive ? t("active") : t("inactive")}
-                      </span>
-                    </button>
+                    <form action={toggleProductAction}>
+                      <input type="hidden" name="id" value={product.id} />
+                      <input type="hidden" name="isActive" value={String(product.isActive)} />
+                      <button
+                        type="submit"
+                        className="inline-flex items-center gap-1.5 text-xs"
+                        title={product.isActive ? t("active") : t("inactive")}
+                      >
+                        <Icon
+                          name={product.isActive ? "toggleOn" : "toggleOff"}
+                          size={28}
+                          strokeWidth={1.5}
+                          className={product.isActive ? "text-emerald-400" : "text-[var(--sr-fg-muted)]"}
+                        />
+                        <span className={product.isActive ? "text-emerald-400" : "text-[var(--sr-fg-muted)]"}>
+                          {product.isActive ? t("active") : t("inactive")}
+                        </span>
+                      </button>
+                    </form>
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
